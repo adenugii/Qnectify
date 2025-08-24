@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "username": "@sarah_learns",
+    "name": "Sarah Learns",
+    "avatar": "/avatars/sarah.png",
+    "badge": "Top Creator",
+    "badgeColor": "bg-pink-500"
+  },
+  {
+    "id": "2",
+    "username": "@alex_dev",
+    "name": "Alex Dev",
+    "avatar": "/avatars/alex.png",
+    "badge": "Active Learner",
+    "badgeColor": "bg-green-500"
+  },
+  {
+    "id": "3",
+    "username": "@mike_code",
+    "name": "Mike Code",
+    "avatar": "/avatars/mike.png",
+    "badge": "Expert",
+    "badgeColor": "bg-blue-500"
+  },
+  {
+    "id": "4",
+    "username": "@emma_design",
+    "name": "Emma Design",
+    "avatar": "/avatars/emma.png",
+    "badge": "Designer",
+    "badgeColor": "bg-pink-400"
+  },
+  {
+    "id": "5",
+    "username": "@john_teach",
+    "name": "John Teach",
+    "avatar": "/avatars/john.png",
+    "badge": "Mentor",
+    "badgeColor": "bg-yellow-400"
+  },
+  {
+    "id": "6",
+    "username": "@lisa_writer",
+    "name": "Lisa Writer",
+    "avatar": "/avatars/lisa.png",
+    "badge": "Content Creator",
+    "badgeColor": "bg-blue-400"
+  },
+  {
+    "id": "7",
+    "username": "@david_math",
+    "name": "David Math",
+    "avatar": "/avatars/david.png",
+    "badge": "Mathematician",
+    "badgeColor": "bg-purple-500"
+  },
+  {
+    "id": "8",
+    "username": "@nina_art",
+    "name": "Nina Art",
+    "avatar": "/avatars/nina.png",
+    "badge": "Artist",
+    "badgeColor": "bg-pink-300"
+  },
+  {
+    "id": "9",
+    "username": "@steve_history",
+    "name": "Steve History",
+    "avatar": "/avatars/steve.png",
+    "badge": "Historian",
+    "badgeColor": "bg-yellow-600"
+  },
+  {
+    "id": "10",
+    "username": "@olivia_sci",
+    "name": "Olivia Sci",
+    "avatar": "/avatars/olivia.png",
+    "badge": "Scientist",
+    "badgeColor": "bg-green-400"
+  },
+  {
+    "id": "11",
+    "username": "@budi_bio",
+    "name": "Budi Bio",
+    "avatar": "/avatars/budi.png",
+    "badge": "Biologist",
+    "badgeColor": "bg-green-600"
+  },
+  {
+    "id": "12",
+    "username": "@citra_phys",
+    "name": "Citra Phys",
+    "avatar": "/avatars/citra.png",
+    "badge": "Physicist",
+    "badgeColor": "bg-blue-600"
+  },
+  {
+    "id": "13",
+    "username": "@rani_chem",
+    "name": "Rani Chem",
+    "avatar": "/avatars/rani.png",
+    "badge": "Chemist",
+    "badgeColor": "bg-pink-600"
+  },
+  {
+    "id": "14",
+    "username": "@agus_geo",
+    "name": "Agus Geo",
+    "avatar": "/avatars/agus.png",
+    "badge": "Geographer",
+    "badgeColor": "bg-yellow-700"
+  },
+  {
+    "id": "15",
+    "username": "@dina_lit",
+    "name": "Dina Lit",
+    "avatar": "/avatars/dina.png",
+    "badge": "Literature",
+    "badgeColor": "bg-purple-400"
+  },
+  {
+    "id": "16",
+    "username": "@fajar_hist",
+    "name": "Fajar Hist",
+    "avatar": "/avatars/fajar.png",
+    "badge": "Historian",
+    "badgeColor": "bg-yellow-500"
+  },
+  {
+    "id": "17",
+    "username": "@gina_art",
+    "name": "Gina Art",
+    "avatar": "/avatars/gina.png",
+    "badge": "Artist",
+    "badgeColor": "bg-pink-200"
+  },
+  {
+    "id": "18",
+    "username": "@hadi_math",
+    "name": "Hadi Math",
+    "avatar": "/avatars/hadi.png",
+    "badge": "Mathematician",
+    "badgeColor": "bg-purple-600"
+  },
+  {
+    "id": "19",
+    "username": "@irma_dev",
+    "name": "Irma Dev",
+    "avatar": "/avatars/irma.png",
+    "badge": "Developer",
+    "badgeColor": "bg-blue-700"
+  },
+  {
+    "id": "20",
+    "username": "@joni_writer",
+    "name": "Joni Writer",
+    "avatar": "/avatars/joni.png",
+    "badge": "Content Creator",
+    "badgeColor": "bg-blue-300"
+  }
+]

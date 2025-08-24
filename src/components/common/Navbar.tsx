@@ -8,7 +8,7 @@ import { FaUserCircle } from "react-icons/fa";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Buat Kuis", href: "/buat-kuis" },
-  { name: "Studi Grup", href: "/studi-grup" },
+  { name: "Studi grup", href: "/study-groups" },
   { name: "Tentang", href: "/tentang" },
   { name: "Kontak", href: "/kontak" },
 ];

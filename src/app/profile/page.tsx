@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/common/Navbar";
 import { FaTrophy, FaFire, FaStar, FaClock } from "react-icons/fa";
 import { FaFlask, FaGlobe, FaCalculator } from "react-icons/fa6";
 import { HiOutlineUsers } from "react-icons/hi2";
