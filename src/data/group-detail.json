@@ -1,0 +1,135 @@
+{
+  "progress": {
+    "totalQuiz": 12,
+    "activeMembers": 8,
+    "maxMembers": 15,
+    "totalXP": 1250
+  },
+  "quizzes": [
+    {
+      "title": "Matematika Dasar - Aljabar Linear",
+      "desc": "Ditambahkan oleh Andi Pratama",
+      "avatar": "/profile1.jpg",
+      "questions": 25,
+      "time": 45,
+      "done": 8,
+      "total": 15,
+      "status": "done",
+      "score": "85/100",
+      "progress": 53,
+      "badge": "Sniper"
+    },
+    {
+      "title": "Fisika - Mekanika Newton",
+      "desc": "Ditambahkan oleh Sari Dewi",
+      "avatar": "/profile2.jpg",
+      "questions": 20,
+      "time": 30,
+      "done": 3,
+      "total": 15,
+      "status": "not_started",
+      "score": "",
+      "progress": 20,
+      "badge": ""
+    },
+    {
+      "title": "Bahasa Inggris - Grammar Tenses",
+      "desc": "Ditambahkan oleh Budi Santoso",
+      "avatar": "/profile3.jpg",
+      "questions": 30,
+      "time": 60,
+      "done": 12,
+      "total": 15,
+      "status": "done",
+      "score": "92/100",
+      "progress": 80,
+      "badge": "Speedster"
+    }
+  ],
+  "topPerformers": [
+    {
+      "name": "Kamu",
+      "avatar": "/profile-demo.jpg",
+      "quizDone": 3,
+      "xp": 1240,
+      "rank": 1,
+      "isYou": true
+    },
+    {
+      "name": "Sari Dewi",
+      "avatar": "/profile2.jpg",
+      "quizDone": 2,
+      "xp": 980,
+      "rank": 2,
+      "isYou": false
+    }
+  ],
+  "members": [
+    {
+      "name": "Kamu",
+      "avatar": "/profile-demo.jpg",
+      "role": "Admin",
+      "xp": 1240,
+      "quizDone": 3,
+      "isYou": true
+    },
+    {
+      "name": "Sari Dewi",
+      "avatar": "/profile2.jpg",
+      "role": "Member",
+      "xp": 980,
+      "quizDone": 2,
+      "isYou": false
+    },
+    {
+      "name": "Budi Santoso",
+      "avatar": "/profile3.jpg",
+      "role": "Member",
+      "xp": 800,
+      "quizDone": 2,
+      "isYou": false
+    },
+    {
+      "name": "Andi Pratama",
+      "avatar": "/profile-andi.jpg",
+      "role": "Member",
+      "xp": 700,
+      "quizDone": 1,
+      "isYou": false
+    }
+  ],
+  "leaderboard": [
+    {
+      "name": "Kamu",
+      "avatar": "/profile-demo.jpg",
+      "xp": 1240,
+      "quizDone": 3,
+      "rank": 1,
+      "isYou": true
+    },
+    {
+      "name": "Sari Dewi",
+      "avatar": "/profile2.jpg",
+      "xp": 980,
+      "quizDone": 2,
+      "rank": 2,
+      "isYou": false
+    },
+    {
+      "name": "Budi Santoso",
+      "avatar": "/profile3.jpg",
+      "xp": 800,
+      "quizDone": 2,
+      "rank": 3,
+      "isYou": false
+    },
+    {
+      "name": "Andi Pratama",
+      "avatar": "/profile-andi.jpg",
+      "xp": 700,
+      "quizDone": 1,
+      "rank": 4,
+      "isYou": false
+    }
+  ]
+}

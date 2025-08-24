@@ -76,7 +76,7 @@ export default function QuizPage() {
           <div className="flex flex-col gap-4">
             {question.options.map((opt, idx) => (
               <label
-                key={opt}
+                key={idx} // gunakan index agar selalu unik
                 className={`flex items-center gap-3 border rounded-lg px-4 py-3 cursor-pointer transition
                   ${
                     selected === idx
