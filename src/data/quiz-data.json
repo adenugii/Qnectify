@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Algoritma Dasar",
+    "subtitle": "Programming Fundamentals",
+    "level": "Mudah",
+    "levelColor": "green",
+    "questions": 15,
+    "time": 30,
+    "progress": 80,
+    "status": "progress"
+  },
+  {
+    "title": "Struktur Data",
+    "subtitle": "Data Structures & Algorithms",
+    "level": "Sedang",
+    "levelColor": "yellow",
+    "questions": 20,
+    "time": 45,
+    "progress": 0,
+    "status": "not_started"
+  },
+  {
+    "title": "Database MySQL",
+    "subtitle": "Database Management",
+    "level": "Sulit",
+    "levelColor": "red",
+    "questions": 25,
+    "time": 60,
+    "progress": 100,
+    "status": "done"
+  },
+  {
+    "title": "HTML & CSS",
+    "subtitle": "Web Development Basics",
+    "level": "Mudah",
+    "levelColor": "green",
+    "questions": 12,
+    "time": 25,
+    "progress": 60,
+    "status": "progress"
+  },
+  {
+    "title": "JavaScript ES6",
+    "subtitle": "Modern JavaScript",
+    "level": "Sedang",
+    "levelColor": "yellow",
+    "questions": 18,
+    "time": 40,
+    "progress": 0,
+    "status": "not_started"
+  },
+  {
+    "title": "React Framework",
+    "subtitle": "Frontend Development",
+    "level": "Sulit",
+    "levelColor": "red",
+    "questions": 22,
+    "time": 50,
+    "progress": 30,
+    "status": "progress"
+  }
+]
