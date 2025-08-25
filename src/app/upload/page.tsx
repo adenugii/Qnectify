@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/common/Navbar";
 import { FaCloudUploadAlt, FaCheckCircle, FaStickyNote } from "react-icons/fa";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
 import { BsExclamationCircleFill } from "react-icons/bs";

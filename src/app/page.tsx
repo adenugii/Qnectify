@@ -2,7 +2,7 @@ import Footer from "@/components/common/Footer";
 import CTASection from "@/components/home/CTASection";
 import FiturUnggulanSection from "@/components/home/FiturUnggulanSection";
 import HeroSection from "@/components/home/HeroSection";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/common/Navbar";
 
 
 export default function Home() {

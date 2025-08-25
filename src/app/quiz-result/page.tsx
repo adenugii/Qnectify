@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
-import QuizCard, { QuizCardProps } from "@/components/QuizCard";
+import Navbar from "@/components/common/Navbar";
+import QuizCard, { QuizCardProps } from "@/components/quiz/QuizCard";
 import quizList from "@/data/quiz-data.json"; // Import data dari file JSON
 
 export default function QuizResultPage() {
