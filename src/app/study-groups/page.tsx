@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
-import StudyGroupCard, { StudyGroupCardProps } from "@/components/StudyGroupCard";
+import Navbar from "@/components/common/Navbar";
+import StudyGroupCard, { StudyGroupCardProps } from "@/components/StudyGroup/StudyGroupCard";
 import studyGroups from "@/data/study-groups.json"; // Import data dari file JSON
 
 export default function StudyGroupsPage() {
