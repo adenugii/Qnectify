@@ -36,13 +36,50 @@ const slides = [
 	},
 ];
 
-export default function LoginAuthLayout() {
+type LoginAuthLayoutProps = {
+	onLogin?: ({
+		email,
+		password,
+		rememberMe,
+		setError,
+		setLoading,
+	}: {
+		email: string;
+		password: string;
+		rememberMe: boolean;
+		setError: (msg: string | null) => void;
+		setLoading: (v: boolean) => void;
+	}) => void;
+};
+
+export default function LoginAuthLayout({ onLogin }: LoginAuthLayoutProps) {
 	const [idx, setIdx] = useState(0);
+	const [form, setForm] = useState({ email: "", password: "" });
+	const [rememberMe, setRememberMe] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		const timer = setInterval(() => setIdx((i) => (i + 1) % slides.length), 4000);
 		return () => clearInterval(timer);
 	}, []);
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		if (onLogin) {
+			await onLogin({
+				email: form.email,
+				password: form.password,
+				rememberMe,
+				setError,
+				setLoading,
+			});
+		}
+	};
 
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#eaf1ff] to-[#e3e6ee]">
@@ -94,37 +131,52 @@ export default function LoginAuthLayout() {
 						<div className="text-2xl font-bold text-gray-800 mb-1">Selamat Datang!</div>
 						<div className="text-sm text-gray-500">Masuk ke akun Smart Quiz Generator Anda</div>
 					</div>
-					<form className="flex flex-col gap-4">
+					<form className="flex flex-col gap-4" onSubmit={handleSubmit}>
 						<div>
 							<label className="block text-xs font-medium text-gray-700 mb-1">Email</label>
 							<input
 								type="email"
+								name="email"
 								className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
 								placeholder="nama@email.com"
+								value={form.email}
+								onChange={handleChange}
+								required
 							/>
 						</div>
 						<div>
 							<label className="block text-xs font-medium text-gray-700 mb-1">Password</label>
 							<input
 								type="password"
+								name="password"
 								className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
 								placeholder="********"
+								value={form.password}
+								onChange={handleChange}
+								required
 							/>
 						</div>
 						<div className="flex items-center justify-between">
 							<label className="flex items-center gap-2 text-xs text-gray-600">
-								<input type="checkbox" className="accent-[#2563eb]" />
+								<input
+									type="checkbox"
+									className="accent-[#2563eb]"
+									checked={rememberMe}
+									onChange={(e) => setRememberMe(e.target.checked)}
+								/>
 								Ingat saya
 							</label>
 							<a href="#" className="text-xs text-[#2563eb] hover:underline">
 								Lupa password?
 							</a>
 						</div>
+						{error && <div className="text-xs text-red-500">{error}</div>}
 						<button
 							type="submit"
 							className="w-full bg-[#2563eb] text-white rounded-md py-2 font-semibold mt-2 hover:bg-[#174bbd] transition"
+							disabled={loading}
 						>
-							Masuk &rarr;
+							{loading ? "Memproses..." : "Masuk →"}
 						</button>
 						<div className="flex items-center gap-2 my-2">
 							<div className="flex-1 h-px bg-gray-200" />

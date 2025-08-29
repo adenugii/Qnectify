@@ -3,6 +3,7 @@ import CTASection from "@/components/home/CTASection";
 import FiturUnggulanSection from "@/components/home/FiturUnggulanSection";
 import HeroSection from "@/components/home/HeroSection";
 import Navbar from "@/components/common/Navbar";
+import AboutWhyUsSection from "@/components/about-us/AboutWhyUsSection";
 
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
   <Navbar />
   <HeroSection /> 
   <FiturUnggulanSection />
-  {/* <CTASection />  */}
+  
+  <CTASection /> 
   <Footer />
   </div>
   
