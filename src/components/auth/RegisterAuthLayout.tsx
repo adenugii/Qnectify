@@ -1,8 +1,9 @@
 "use client";
+import { signup } from "@/services/authservices";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FaLightbulb, FaCrown, FaStar } from "react-icons/fa";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const slides = [
 	{
@@ -42,12 +43,59 @@ const slides = [
 export default function RegisterAuthLayout() {
 	const [idx, setIdx] = useState(0);
 	const [agree, setAgree] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
+	const [showPassword, setShowPassword] = useState(false);
+	const [showConfirm, setShowConfirm] = useState(false);
 	const router = useRouter();
 
 	useEffect(() => {
 		const timer = setInterval(() => setIdx((i) => (i + 1) % slides.length), 4000);
 		return () => clearInterval(timer);
 	}, []);
+
+	function validateEmail(email: string) {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+	}
+	function validatePassword(password: string) {
+		return /[A-Z]/.test(password) && /\d/.test(password) && password.length >= 6;
+	}
+
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+		if (!agree || loading) return;
+		const form = e.currentTarget;
+		const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+		const username = (form.elements.namedItem("username") as HTMLInputElement)?.value;
+		const password = (form.elements.namedItem("password") as HTMLInputElement)?.value;
+		const confirm = (form.elements.namedItem("confirm") as HTMLInputElement)?.value;
+		if (!email || !username || !password || !confirm) {
+			setError("Semua field harus diisi.");
+			return;
+		}
+		if (!validateEmail(email)) {
+			setError("Email tidak valid.");
+			return;
+		}
+		if (!validatePassword(password)) {
+			setError("Password minimal 6 karakter, mengandung huruf besar dan angka.");
+			return;
+		}
+		if (password !== confirm) {
+			setError("Password dan konfirmasi password tidak sama.");
+			return;
+		}
+		setLoading(true);
+		setError(null);
+		try {
+			await signup({ email, username, password });
+			router.push("/rekomendasi-akun");
+		} catch (err: any) {
+			setError(err.message || "Gagal mendaftar.");
+		} finally {
+			setLoading(false);
+		}
+	}
 
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#eaf1ff] to-[#e3e6ee]">
@@ -99,19 +147,12 @@ export default function RegisterAuthLayout() {
 						<div className="text-2xl font-bold text-gray-800 mb-1">Daftar Akun</div>
 						<div className="text-sm text-gray-500">Mulai perjalanan belajar Anda</div>
 					</div>
-					<form
-						className="flex flex-col gap-4"
-						onSubmit={(e) => {
-							e.preventDefault();
-							if (agree) {
-								router.push("/rekomendasi-akun");
-							}
-						}}
-					>
+					<form className="flex flex-col gap-4" onSubmit={handleSubmit}>
 						<div>
 							<label className="block text-xs font-medium text-gray-700 mb-1">Email</label>
 							<input
 								type="email"
+								name="email"
 								className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
 								placeholder="nama@email.com"
 							/>
@@ -120,25 +161,48 @@ export default function RegisterAuthLayout() {
 							<label className="block text-xs font-medium text-gray-700 mb-1">Username</label>
 							<input
 								type="text"
+								name="username"
 								className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
 								placeholder="username"
 							/>
 						</div>
 						<div>
 							<label className="block text-xs font-medium text-gray-700 mb-1">Password</label>
-							<input
-								type="password"
-								className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
-								placeholder="********"
-							/>
+							<div className="relative">
+								<input
+									type={showPassword ? "text" : "password"}
+									name="password"
+									className="text-gray-800 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition pr-10"
+									placeholder="********"
+								/>
+								<button
+									type="button"
+									tabIndex={-1}
+									className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-[#2563eb] font-semibold"
+									onClick={() => setShowPassword((v) => !v)}
+								>
+									{showPassword ? "Hide" : "Show"}
+								</button>
+							</div>
 						</div>
 						<div>
 							<label className="block text-xs font-medium text-gray-700 mb-1">Konfirmasi Password</label>
-							<input
-								type="password"
-								className="text-gray-700 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition"
-								placeholder="********"
-							/>
+							<div className="relative">
+								<input
+									type={showConfirm ? "text" : "password"}
+									name="confirm"
+									className="text-gray-700 w-full rounded-md border border-gray-300 shadow-[0_3px_10px_0_rgba(37,99,235,0.25)] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb] transition pr-10"
+									placeholder="********"
+								/>
+								<button
+									type="button"
+									tabIndex={-1}
+									className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-[#2563eb] font-semibold"
+									onClick={() => setShowConfirm((v) => !v)}
+								>
+									{showConfirm ? "Hide" : "Show"}
+								</button>
+							</div>
 						</div>
 						<label className="flex items-center gap-2 text-xs text-gray-600">
 							<input
@@ -152,16 +216,19 @@ export default function RegisterAuthLayout() {
 								Syarat & Ketentuan
 							</a>
 						</label>
+						{error && (
+							<div className="text-xs text-red-500">{error}</div>
+						)}
 						<button
 							type="submit"
 							className={`w-full rounded-md py-2 font-semibold mt-2 transition shadow-md ${
-								agree
+								agree && !loading
 									? "bg-[#2563eb] text-white hover:bg-[#174bbd] cursor-pointer"
 									: "bg-gray-200 text-gray-400 cursor-not-allowed"
 							}`}
-							disabled={!agree}
+							disabled={!agree || loading}
 						>
-							Daftar Sekarang
+							{loading ? "Mendaftar..." : "Daftar Sekarang"}
 						</button>
 					</form>
 					<div className="text-xs text-gray-500 mt-6 text-center">
