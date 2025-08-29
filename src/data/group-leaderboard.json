@@ -1,0 +1,74 @@
+{
+  "groups": [
+    {
+      "name": "Tech Innovators",
+      "icon": "yellow",
+      "bg": "bg-yellow-100",
+      "members": 15,
+      "completed": 243,
+      "xp": 89450,
+      "trend": 2340,
+      "isYou": false
+    },
+    {
+      "name": "Code Warriors",
+      "icon": "blue",
+      "bg": "bg-blue-100",
+      "members": 22,
+      "completed": 188,
+      "xp": 76890,
+      "trend": 1850,
+      "isYou": false
+    },
+    {
+      "name": "Smart Learners",
+      "icon": "purple",
+      "bg": "bg-purple-100",
+      "members": 18,
+      "completed": 157,
+      "xp": 65230,
+      "trend": 1650,
+      "isYou": true
+    },
+    {
+      "name": "Green Minds",
+      "icon": "green",
+      "bg": "bg-green-100",
+      "members": 12,
+      "completed": 143,
+      "xp": 58720,
+      "trend": 1240,
+      "isYou": false
+    },
+    {
+      "name": "Fire Squad",
+      "icon": "red",
+      "bg": "bg-red-100",
+      "members": 20,
+      "completed": 125,
+      "xp": 52180,
+      "trend": -320,
+      "isYou": false
+    },
+    {
+      "name": "Fire Squad",
+      "icon": "red",
+      "bg": "bg-red-100",
+      "members": 20,
+      "completed": 125,
+      "xp": 52180,
+      "trend": -320,
+      "isYou": false
+    },
+    {
+      "name": "Fire Squad",
+      "icon": "red",
+      "bg": "bg-red-100",
+      "members": 20,
+      "completed": 125,
+      "xp": 52180,
+      "trend": -320,
+      "isYou": false
+    }
+  ]
+}

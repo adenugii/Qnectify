@@ -1,4 +1,5 @@
 import React from "react";
+import { FaRegBookmark } from "react-icons/fa";
 
 // Props untuk QuizCard
 export interface QuizCardProps {
@@ -10,6 +11,10 @@ export interface QuizCardProps {
   time: number;
   progress: number; // 0-100
   status: "progress" | "done" | "not_started";
+  question: string;
+  options: string[];
+  selected: number;
+  setSelected: (idx: number) => void;
 }
 
 // Badge warna sesuai level
@@ -28,9 +33,13 @@ export default function QuizCard({
   time,
   progress,
   status,
+  question,
+  options,
+  selected,
+  setSelected,
 }: QuizCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-100 flex flex-col gap-3">
+    <div className="bg-white rounded-xl shadow-sm p-8 max-w-2xl mx-auto flex flex-col gap-6">
       {/* Header: Judul & Badge */}
       <div className="flex items-center gap-2 mb-1">
         <h3 className="font-semibold text-gray-900 text-base">{title}</h3>
@@ -64,6 +73,37 @@ export default function QuizCard({
             style={{ width: `${progress}%` }}
           />
         </div>
+      </div>
+      {/* Pertanyaan */}
+      <div className="font-bold text-xl text-gray-900 mb-2 leading-relaxed">
+        {question}
+      </div>
+      {/* Opsi Jawaban */}
+      <div className="flex flex-col gap-4">
+        {options.map((opt, idx) => (
+          <label
+            key={idx}
+            className={`flex items-center gap-3 border rounded-lg px-4 py-3 cursor-pointer transition
+              ${
+                selected === idx
+                  ? "border-[#2563eb] bg-blue-50"
+                  : "border-gray-200 bg-white hover:border-[#2563eb]/60"
+              }
+            `}
+          >
+            <input
+              type="radio"
+              name="answer"
+              checked={selected === idx}
+              onChange={() => setSelected(idx)}
+              className="form-radio accent-[#2563eb] w-5 h-5"
+            />
+            <span className="font-semibold text-gray-700 text-base">
+              {String.fromCharCode(65 + idx)}.
+            </span>
+            <span className="text-gray-700 text-base">{opt}</span>
+          </label>
+        ))}
       </div>
       {/* Tombol Aksi */}
       {status === "done" ? (
