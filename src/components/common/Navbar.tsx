@@ -7,9 +7,9 @@ import { FaUserCircle } from "react-icons/fa";
 // Daftar menu navbar
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Buat Kuis", href: "/buat-kuis" },
+  { name: "Buat Quiz", href: "/quiz-maker" },
   { name: "Studi grup", href: "/study-groups" },
-  { name: "Tentang", href: "/tentang" },
+  { name: "Tentang", href: "/about-us" },
   { name: "Kontak", href: "/kontak" },
 ];
 
