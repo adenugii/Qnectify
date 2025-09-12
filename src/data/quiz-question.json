@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "Jika f(x) = 2x + 3 dan g(x) = x² - 1, maka nilai dari (f • g)(2) adalah...",
+      "options": ["9", "9", "7", "5"]
+    },
+    {
+      "question": "Jika f(x) = x + 2, maka f(3) = ...",
+      "options": ["5", "6", "7", "8"]
+    },
+    {
+      "question": "Jika f(x) = 2x + 3 dan g(x) = x² - 1, maka nilai dari (f • g)(2) adalah...",
+      "options": ["9", "9", "7", "5"]
+    },
+    {
+      "question": "Jika x = 2, maka nilai dari 3x + 1 adalah...",
+      "options": ["5", "6", "7", "8"]
+    },
+    {
+      "question": "Jika f(x) = x², maka f(4) = ...",
+      "options": ["8", "12", "16", "20"]
+    },
+    {
+      "question": "Jika g(x) = x - 1, maka g(5) = ...",
+      "options": ["3", "4", "5", "6"]
+    },
+    {
+      "question": "Jika h(x) = 2x, maka h(3) = ...",
+      "options": ["5", "6", "7", "8"]
+    },
+    {
+      "question": "Jika f(x) = x + 1, maka f(0) = ...",
+      "options": ["0", "1", "2", "3"]
+    },
+    {
+      "question": "Jika f(x) = x² - 2x + 1, maka f(2) = ...",
+      "options": ["1", "2", "3", "4"]
+    },
+    {
+      "question": "Jika f(x) = 3x, maka f(2) = ...",
+      "options": ["3", "4", "5", "6"]
+    }
+  ]
+}
