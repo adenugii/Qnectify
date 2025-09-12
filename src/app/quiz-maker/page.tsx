@@ -1,4 +1,5 @@
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 import { FaCloudUploadAlt, FaCheckCircle, FaStickyNote } from "react-icons/fa";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
 import { BsExclamationCircleFill } from "react-icons/bs";
@@ -212,6 +213,8 @@ export default function UploadPage() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

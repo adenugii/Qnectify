@@ -1,4 +1,5 @@
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 import QuizCard, { QuizCardProps } from "@/components/quiz/QuizCard";
 import quizList from "@/data/quiz-data.json"; // Import data dari file JSON
 
@@ -44,7 +45,7 @@ export default function QuizResultPage() {
         {/* Daftar Quiz */}
         <div className="grid md:grid-cols-3 gap-6 mb-10">
           {(quizList as QuizCardProps[]).map((quiz, idx) => (
-            <QuizCard key={quiz.title + idx} {...quiz} />
+            <QuizCard key={quiz.title + idx} {...quiz} options={quiz.options ?? []} />
           ))}
         </div>
 
@@ -68,6 +69,8 @@ export default function QuizResultPage() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
