@@ -7,7 +7,7 @@ interface LeaderboardTabsProps {
 
 export default function LeaderboardTabs({ tab, setTab }: LeaderboardTabsProps) {
   return (
-    <div className="flex border-b">
+    <div className="flex border-b bg-white rounded-t-xl">
       <button
         className={`flex-1 py-4 font-semibold text-base border-b-2 transition ${
           tab === "global"
