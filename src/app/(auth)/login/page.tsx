@@ -27,11 +27,13 @@ export default function LoginPage() {
     setError(null);
     try {
       const data = await signin({ email, password });
-      if (rememberMe) {
-        Cookies.set("token", data.token, { expires: 7 });
-      } else {
-        sessionStorage.setItem("token", data.token);
-      }
+      // Simpan token di cookie agar bisa diakses SSR
+      Cookies.set("token", data.token, {
+        expires: rememberMe ? 7 : undefined,
+        path: "/",
+        sameSite: "Lax",
+        secure: process.env.NODE_ENV === "production",
+      });
       if (data.user?.username) {
         Cookies.set("username", data.user.username);
       }
@@ -63,4 +65,3 @@ export default function LoginPage() {
     </>
   );
 }
-         

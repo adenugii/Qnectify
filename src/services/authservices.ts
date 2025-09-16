@@ -1,4 +1,5 @@
 const API_BASE_URL = process.env.API_BASE_URL || "http://101.32.242.72:3000";
+import Cookies from "js-cookie";
 
 export async function signup({
   email,
@@ -38,11 +39,28 @@ export async function signin({
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
+    credentials: "include",
   });
 
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
     throw new Error(data?.message || "Gagal login");
   }
+  // Simpan token di cookie agar tetap ada setelah refresh
+  if (data.token) {
+    Cookies.set("token", data.token, {
+      expires: 7,
+      path: "/",
+      sameSite: "None",
+      secure: process.env.NODE_ENV === "production",
+    });
+  }
   return data;
+}
+
+export function logout() {
+  Cookies.remove("token");
+  Cookies.remove("username");
+  Cookies.remove("api_token");
+  sessionStorage.removeItem("token");
 }
