@@ -1,4 +1,5 @@
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 import StudyGroupCard, { StudyGroupCardProps } from "@/components/StudyGroup/StudyGroupCard";
 import studyGroups from "@/data/study-groups.json"; // Import data dari file JSON
 
@@ -34,6 +35,8 @@ export default function StudyGroupsPage() {
           ))}
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

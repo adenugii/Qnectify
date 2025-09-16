@@ -8,6 +8,7 @@ import GroupProgress from "@/components/group-detail/GroupProgress";
 import GroupQuizList from "@/components/group-detail/GroupQuizList";
 import GroupTopPerformers from "@/components/group-detail/GroupTopPerformers";
 import GroupMembers from "@/components/group-detail/GroupMembers";
+import Footer from "@/components/common/Footer";
 
 type TabType = "quiz" | "anggota";
 
@@ -73,6 +74,7 @@ export default function GroupDetailPage() {
           <GroupMembers members={groupData.members} />
         )}
       </main>
+      <Footer />
     </div>
   );
 }

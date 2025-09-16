@@ -3,6 +3,7 @@ import ProfileCard from "@/components/profile/ProfileCard";
 import Badges from "@/components/profile/Badges";
 import QuizHistory from "@/components/profile/QuizHistory";
 import ProfileLeaderboard from "@/components/profile/ProfileLeaderboard";
+import Footer from "@/components/common/Footer";
 
 export default function ProfilePage() {
   return (
@@ -20,6 +21,7 @@ export default function ProfilePage() {
           <ProfileLeaderboard />
         </aside>
       </main>
+      <Footer />
     </div>
   );
 }

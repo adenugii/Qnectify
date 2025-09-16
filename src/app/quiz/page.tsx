@@ -6,6 +6,7 @@ import QuizHeader from "@/components/quiz/QuizHeader";
 import QuizProgress from "@/components/quiz/QuizProgress";
 import QuizCard from "@/components/quiz/QuizCard";
 import QuizNavigation from "@/components/quiz/QuizNavigation";
+import Footer from "@/components/common/Footer";
 
 export default function QuizPage() {
   const [current, setCurrent] = useState(2);
@@ -46,6 +47,7 @@ export default function QuizPage() {
           onNext={() => setCurrent((c) => Math.min(quizData.questions.length - 1, c + 1))}
         />
       </main>
+      <Footer />
     </div>
   );
 }
