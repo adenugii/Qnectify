@@ -1,0 +1,35 @@
+{
+  "title": "Matematika Dasar",
+  "subtitle": "Quiz - Aljabar Linear",
+  "time": "15:27",
+  "score": 85,
+  "accuracy": 85,
+  "correct": 17,
+  "wrong": 3,
+  "discussions": [
+    {
+      "number": 3,
+      "question": "Apa yang dimaksud dengan algoritma bubble sort?",
+      "yourAnswer": "Algoritme untuk mencari data",
+      "correctAnswer": "Algoritma pengurutan dengan membandingkan elemen bersebelahan",
+      "explanation": "Bubble sort adalah algoritma pengurutan sederhana yang bekerja dengan membandingkan elemen bersebelahan dan menukarnya jika urutannya salah.",
+      "isCorrect": false
+    },
+    {
+      "number": 7,
+      "question": "Kompleksitas waktu algoritma binary search adalah?",
+      "yourAnswer": "O(n)",
+      "correctAnswer": "O(log n)",
+      "explanation": "Binary search memiliki kompleksitas O(log n) karena setiap iterasi membagi ruang pencarian menjadi setengah.",
+      "isCorrect": false
+    },
+    {
+      "number": 15,
+      "question": "Apa fungsi utama dari database index?",
+      "yourAnswer": "Menyimpan backup data",
+      "correctAnswer": "Mempercepat proses pencarian data",
+      "explanation": "Database index berfungsi untuk mempercepat operasi pencarian dan query dengan membentuk struktur data tambahan yang terorganisir.",
+      "isCorrect": false
+    }
+  ]
+}
