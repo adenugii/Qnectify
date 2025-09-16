@@ -1,9 +1,8 @@
 import { FaTrophy, FaFire, FaStar, FaBolt } from "react-icons/fa";
 
-export default function ProfileSidebar() {
+export default function LeaderboardSidebar() {
   return (
     <aside className="w-full md:w-[300px] flex-shrink-0 flex flex-col gap-4">
-      {/* Profile Card */}
       <div className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center mb-2">
         <img
           src="/profile-demo.jpg"
@@ -22,7 +21,6 @@ export default function ProfileSidebar() {
           </div>
           <div className="text-xs text-gray-400 mt-1">150 XP menuju Level 13</div>
         </div>
-        {/* Badge Collection */}
         <div className="w-full mt-4">
           <div className="text-xs font-semibold text-gray-700 mb-2">Badge Collection</div>
           <div className="flex gap-2 flex-wrap">
@@ -37,7 +35,6 @@ export default function ProfileSidebar() {
           </div>
         </div>
       </div>
-      {/* Stats */}
       <div className="bg-white rounded-xl shadow-sm p-4 flex flex-col gap-2">
         <div className="flex items-center justify-between text-sm">
           <span className="text-gray-500">Global Rank</span>

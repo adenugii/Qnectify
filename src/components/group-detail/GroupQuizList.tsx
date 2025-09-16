@@ -1,24 +1,35 @@
 import { FaRegChartBar, FaRegClock, FaUserFriends, FaStar, FaRegEye, FaRegPlayCircle } from "react-icons/fa";
 
-interface Quiz {
-  title: string;
-  desc: string;
-  avatar: string;
-  questions: number;
-  time: number;
-  done: number;
-  total: number;
-  status: string;
-  score: string;
-  progress: number;
-  badge?: string;
+export interface GroupQuizListProps {
+  quizzes: {
+    title: string;
+    desc: string;
+    avatar: string;
+    questions: number;
+    time: number;
+    done: number;
+    total: number;
+    status?: string;
+    score?: string;
+    progress?: number;
+    badge?: string;
+  }[];
+  onShowResult: (quiz: {
+    title: string;
+    desc: string;
+    avatar: string;
+    questions: number;
+    time: number;
+    done: number;
+    total: number;
+    status?: string;
+    score?: string;
+    progress?: number;
+    badge?: string;
+  }) => void;
 }
 
-interface GroupQuizListProps {
-  quizzes: Quiz[];
-}
-
-export default function GroupQuizList({ quizzes }: GroupQuizListProps) {
+export default function GroupQuizList({ quizzes, onShowResult }: GroupQuizListProps) {
   return (
     <section className="mb-8">
       <h3 className="font-bold text-lg text-gray-900 mb-4">Daftar Quiz</h3>
@@ -75,7 +86,10 @@ export default function GroupQuizList({ quizzes }: GroupQuizListProps) {
             {/* Action */}
             <div className="flex flex-col items-end gap-2 min-w-[140px]">
               {quiz.status === "done" && (
-                <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-500 font-semibold text-sm shadow border border-gray-200 cursor-pointer">
+                <button
+                  onClick={() => onShowResult(quiz)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-500 font-semibold text-sm shadow border border-gray-200 cursor-pointer"
+                >
                   <FaRegEye />
                   Lihat Hasil
                 </button>
@@ -87,7 +101,10 @@ export default function GroupQuizList({ quizzes }: GroupQuizListProps) {
                 </button>
               )}
               {quiz.status === "in_progress" && (
-                <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-500 font-semibold text-sm shadow border border-gray-200 cursor-pointer">
+                <button
+                  onClick={() => onShowResult(quiz)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-500 font-semibold text-sm shadow border border-gray-200 cursor-pointer"
+                >
                   <FaRegEye />
                   Lihat Hasil
                 </button>
@@ -95,9 +112,9 @@ export default function GroupQuizList({ quizzes }: GroupQuizListProps) {
               <div className="w-full h-1 bg-gray-200 rounded-full mt-2">
                 <div
                   className={`h-1 rounded-full ${
-                    quiz.progress >= 80
+                    quiz.progress && quiz.progress >= 80
                       ? "bg-green-500"
-                      : quiz.progress >= 50
+                      : quiz.progress && quiz.progress >= 50
                       ? "bg-blue-500"
                       : "bg-violet-500"
                   }`}
@@ -113,4 +130,6 @@ export default function GroupQuizList({ quizzes }: GroupQuizListProps) {
       </div>
     </section>
   );
+  // Contoh pemakaian tombol lihat hasil:
+  // <button onClick={() => onShowResult(quiz)}>Lihat Hasil</button>
 }

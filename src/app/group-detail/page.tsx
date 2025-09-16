@@ -9,6 +9,7 @@ import GroupQuizList from "@/components/group-detail/GroupQuizList";
 import GroupTopPerformers from "@/components/group-detail/GroupTopPerformers";
 import GroupMembers from "@/components/group-detail/GroupMembers";
 import Footer from "@/components/common/Footer";
+import QuizResultModal from "@/components/group-detail/QuizResultModal";
 
 type TabType = "quiz" | "anggota";
 
@@ -23,6 +24,8 @@ export default function GroupDetailPage() {
     isPublic: true,
   });
   const [preview, setPreview] = useState<string | null>(null);
+  const [showResult, setShowResult] = useState(false);
+  const [resultData, setResultData] = useState(groupData.quizResults[0]);
 
   // Handler untuk form tambah quiz
   const handleFormChange = (
@@ -66,13 +69,25 @@ export default function GroupDetailPage() {
         {tab === "quiz" && (
           <>
             <GroupProgress progress={groupData.progress} />
-            <GroupQuizList quizzes={groupData.quizzes} />
+            <GroupQuizList
+              quizzes={groupData.quizzes}
+              onShowResult={(quiz) => {
+                const foundResult = groupData.quizResults.find(
+                  (res) => res.title === quiz.title
+                );
+                if (foundResult) {
+                  setResultData(foundResult);
+                  setShowResult(true);
+                }
+              }}
+            />
             <GroupTopPerformers topPerformers={groupData.topPerformers} />
           </>
         )}
         {tab === "anggota" && (
           <GroupMembers members={groupData.members} />
         )}
+        <QuizResultModal show={showResult} onClose={() => setShowResult(false)} result={resultData} />
       </main>
       <Footer />
     </div>
