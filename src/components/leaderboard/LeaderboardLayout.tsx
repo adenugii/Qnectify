@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // filepath: c:\Data\Project\quizzo\src\components\leaderboard\LeaderboardLayout.tsx
 import LeaderboardSidebar from "./LeaderboardSidebar";
 import LeaderboardContent from "./LeaderboardContent";
