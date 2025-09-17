@@ -36,3 +36,37 @@ export async function getAllGroups() {
   }
   return res.json();
 }
+
+export async function joinGroup(
+  groupId: string,
+  invitation_code: string,
+  token?: string
+) {
+  const res = await fetch(`${API_BASE_URL}/study-group/join/${groupId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+    credentials: "include",
+    cache: "no-store",
+    body: JSON.stringify({ invitation_code }),
+  });
+  if (!res.ok) {
+    throw new Error("Failed to join group");
+  }
+  return res.json();
+}
+
+export async function getGroupById(groupId: string, token?: string) {
+  const res = await fetch(`${API_BASE_URL}/study-group/${groupId}`, {
+    method: "GET",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    console.error("Failed to fetch group by id:", groupId, res.status, await res.text());
+    return null;
+  }
+  return res.json();
+}

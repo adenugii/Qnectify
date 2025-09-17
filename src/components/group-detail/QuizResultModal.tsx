@@ -18,6 +18,17 @@ interface QuizResultModalProps {
 
 export default function QuizResultModal({ show, onClose, result }: QuizResultModalProps) {
   if (!show) return null;
+  const safeResult = result || {
+    title: "",
+    score: 0,
+    total: 0,
+    xp: 0,
+    badge: "",
+    correct: 0,
+    wrong: 0,
+    time: "",
+    details: [],
+  };
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
       <div className="bg-white rounded-xl shadow-lg w-full max-w-xl p-8 relative">
@@ -30,35 +41,35 @@ export default function QuizResultModal({ show, onClose, result }: QuizResultMod
         </button>
         <div className="flex flex-col items-center mb-6">
           <FaCheckCircle className="text-[#6366f1] text-4xl mb-2" />
-          <h2 className="font-bold text-2xl text-gray-900 mb-1">{result.title}</h2>
+          <h2 className="font-bold text-2xl text-gray-900 mb-1">{safeResult.title}</h2>
           <div className="text-gray-500 text-base mb-2">Hasil Quiz Kamu</div>
           <div className="flex items-center gap-4 mb-2">
-            <span className="text-3xl font-bold text-[#2563eb]">{result.score}/{result.total}</span>
+            <span className="text-3xl font-bold text-[#2563eb]">{safeResult.score}/{safeResult.total}</span>
             <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-semibold text-sm">
-              +{result.xp} XP
+              +{safeResult.xp} XP
             </span>
-            {result.badge && (
+            {safeResult.badge && (
               <span className="flex items-center gap-1 bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full font-semibold text-sm">
-                <FaStar /> {result.badge}
+                <FaStar /> {safeResult.badge}
               </span>
             )}
           </div>
           <div className="flex gap-6 mb-2">
             <span className="text-green-500 font-semibold">
-              {result.correct} Benar
+              {safeResult.correct} Benar
             </span>
             <span className="text-red-500 font-semibold">
-              {result.wrong} Salah
+              {safeResult.wrong} Salah
             </span>
             <span className="text-gray-500 font-semibold">
-              {result.time} menit
+              {safeResult.time} menit
             </span>
           </div>
         </div>
         <div className="mb-4">
           <h3 className="font-bold text-lg text-gray-900 mb-2">Detail Jawaban</h3>
           <div className="flex flex-col gap-3 max-h-60 overflow-y-auto">
-            {result.details.map((item, idx) => (
+            {safeResult.details.map((item, idx) => (
               <div
                 key={idx}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg border ${

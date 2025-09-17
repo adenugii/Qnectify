@@ -1,12 +1,13 @@
 import { FaStar, FaPlus } from "react-icons/fa";
 
 interface GroupHeaderProps {
+  group: any;
   onAddQuiz: () => void;
   tab: string;
   setTab: (tab: "quiz" | "anggota") => void;
 }
 
-export default function GroupHeader({ onAddQuiz, tab, setTab }: GroupHeaderProps) {
+export default function GroupHeader({ group, onAddQuiz, tab, setTab }: GroupHeaderProps) {
   return (
     <div className="w-full bg-white shadow-sm">
       <div className="max-w-4xl mx-auto flex items-center justify-between px-8 py-6">
@@ -16,10 +17,13 @@ export default function GroupHeader({ onAddQuiz, tab, setTab }: GroupHeaderProps
           </div>
           <div>
             <div className="font-bold text-xl text-gray-900 leading-tight">
-              Study Squad
+              {group?.name || "Study Squad"}
             </div>
             <div className="text-gray-500 text-sm mt-0.5">
-              15 anggota aktif
+              {group?.member_count ?? 0} anggota aktif
+            </div>
+            <div className="text-gray-400 text-xs mt-1">
+              {group?.description}
             </div>
           </div>
         </div>
