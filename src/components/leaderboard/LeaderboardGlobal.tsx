@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTrophy, FaFire, FaStar, FaBolt } from "react-icons/fa";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 interface User {
   name: string;

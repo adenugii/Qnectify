@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 "use client";
 import { useState, useMemo } from "react";
 import { userRekomendasi, UserRekomendasi } from "@/data/user";
@@ -46,7 +47,7 @@ export default function AccountRecommendation({ onSuccess }: { onSuccess?: () =>
         setCards((prev) => {
           const idx = prev.findIndex((c) => c.user.id === userId);
           if (idx === -1) return prev;
-          let newCards = [...prev];
+          const newCards = [...prev];
           // Remove the card
           newCards.splice(idx, 1);
           // Add new user from pool if available

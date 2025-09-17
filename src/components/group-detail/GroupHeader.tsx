@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaStar, FaPlus } from "react-icons/fa";
 
 interface GroupHeaderProps {

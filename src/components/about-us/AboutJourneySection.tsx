@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { FaLightbulb, FaCode, FaRocket, FaStar } from "react-icons/fa";
@@ -42,7 +43,7 @@ export default function AboutJourneySection() {
 			const visible = Math.max(0, windowHeight - rect.top);
 			const total = rect.height;
 			// Animate bar height (min 0, max 100%)
-			let percent = Math.min(1, Math.max(0, visible / total));
+			const percent = Math.min(1, Math.max(0, visible / total));
 			setBarHeight(percent);
 
 			// Animate steps one by one as user scrolls
