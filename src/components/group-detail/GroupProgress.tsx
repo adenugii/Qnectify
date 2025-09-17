@@ -10,6 +10,9 @@ interface GroupProgressProps {
 }
 
 export default function GroupProgress({ progress }: GroupProgressProps) {
+  // Fallback jika progress atau totalXP tidak ada
+  const totalXP = progress?.totalXP ?? 0;
+
   return (
     <section className="bg-white rounded-xl shadow-sm p-6 flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
       <div className="flex-1 flex flex-col items-center gap-2">
@@ -30,7 +33,7 @@ export default function GroupProgress({ progress }: GroupProgressProps) {
         <div className="bg-pink-100 rounded-full p-3 mb-2">
           <FaStar className="text-pink-400 text-xl" />
         </div>
-        <div className="text-2xl font-bold text-gray-900">{progress.totalXP.toLocaleString("en-US")}</div>
+        <div className="text-2xl font-bold text-gray-900">{totalXP.toLocaleString("en-US")}</div>
         <div className="text-gray-500 text-sm">Total XP Grup</div>
       </div>
     </section>

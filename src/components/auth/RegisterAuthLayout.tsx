@@ -18,7 +18,7 @@ const slides = [
 		logoText: "",
 	},
 	{
-		icon: "/quizzo-logo.svg",
+		icon: "/qnectify-logo.svg",
 		title: "Smart Quiz Generator",
 		desc: "Buat quiz pintar dengan teknologi AI terdepan",
 		badges: [
@@ -26,7 +26,7 @@ const slides = [
 			{ icon: <FaStar className="text-pink-500" />, style: "left-8 bottom-8 bg-white" },
 			{ icon: <span className="font-bold text-[#2563eb]">XP</span>, style: "left-8 top-16 bg-white" },
 		],
-		logoText: "QUIZZO",
+		logoText: "Qnectify",
 	},
 	{
 		icon: "/smart-quiz-logo.svg",

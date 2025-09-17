@@ -131,5 +131,35 @@
       "rank": 4,
       "isYou": false
     }
+  ],
+  "quizResults": [
+    {
+      "title": "Matematika Dasar - Aljabar Linear",
+      "score": 85,
+      "total": 100,
+      "xp": 1240,
+      "badge": "Sniper",
+      "correct": 17,
+      "wrong": 3,
+      "time": "12:30",
+      "details": [
+        { "question": "2x + 3 = 7, x = ?", "correct": true, "answer": "2" },
+        { "question": "Matrix A x B = ?", "correct": false, "answer": "Salah" }
+      ]
+    },
+    {
+      "title": "Bahasa Inggris - Grammar Tenses",
+      "score": 92,
+      "total": 100,
+      "xp": 980,
+      "badge": "Speedster",
+      "correct": 18,
+      "wrong": 2,
+      "time": "14:10",
+      "details": [
+        { "question": "She ___ to school every day.", "correct": true, "answer": "goes" },
+        { "question": "Past tense of 'run'?", "correct": false, "answer": "runned" }
+      ]
+    }
   ]
 }

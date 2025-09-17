@@ -8,9 +8,9 @@ import { FaUserCircle } from "react-icons/fa";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Buat Quiz", href: "/quiz-maker" },
-  { name: "Studi grup", href: "/study-groups" },
+  { name: "Studi grup", href: "/study-group" },
   { name: "Tentang", href: "/about-us" },
-  { name: "Kontak", href: "/kontak" },
+  { name: "Kontak", href: "/history" },
 ];
 
 export default function Navbar() {
@@ -21,8 +21,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-0">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Quizzo Logo" className="h-8 w-8" />
-          <span className="font-bold text-xl text-[#2563eb] tracking-tight">QUIZZO</span>
+          <img src="/logo.png" alt="Qnectify Logo" className="h-8 w-8" />
+          <span className="font-bold text-xl text-[#2563eb] tracking-tight">Qnectify</span>
         </Link>
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center gap-6">
