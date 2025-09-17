@@ -9,7 +9,21 @@ import { getAllGroups } from "@/services/groupservices";
 export default async function StudyGroupsPage() {
   const cookieStore = cookies();
   const token = (await cookieStore).get("token")?.value || "";
-  const groupRes = await getAllGroups();
+  const groupsRes = await getAllGroups();
+  const studyGroups = groupsRes.study_groups || [];
+
+  // Mapping ke StudyGroupCardProps
+  const mappedGroups = studyGroups.map((group: any, idx: number) => ({
+    title: group.name,
+    description: group.description,
+    memberCount: group.member_count,
+    maxMember: group.max_member,
+    isPrivate: group.is_private,
+    inviteCode: group.invite_code,
+    // icon: bisa di-random atau default, misal:
+    icon: ["math", "physics", "english"][idx % 3] as "math" | "physics" | "english",
+    // tambahkan properti lain sesuai kebutuhan StudyGroupCard
+  }));
 
   return (
     <div className="min-h-screen bg-[#fafbfc]">
@@ -17,7 +31,7 @@ export default async function StudyGroupsPage() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         <StudyGroupHeader />
         <StudyGroupCreateButton token={token} />
-        <StudyGroupList groups={groupRes.recommendations} />
+        <StudyGroupList groups={mappedGroups} />
       </main>
       <Footer />
     </div>

@@ -32,7 +32,7 @@ export async function getAllGroups() {
     cache: "no-store",
   });
   if (!res.ok) {
-    return { recommendations: [] };
+    return { study_groups: [] };
   }
   return res.json();
 }
