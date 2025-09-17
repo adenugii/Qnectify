@@ -7,8 +7,8 @@ export default function AboutHeroSection() {
       <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
         <div className="flex-1 flex flex-col items-center md:items-start justify-center">
           <div className="flex items-center gap-3 mb-6 justify-center md:justify-start w-full">
-            <Image src="/quizzo-logo.svg" alt="Quizzo Logo" width={64} height={64} />
-            <span className="text-4xl font-extrabold text-white">QUIZZO</span>
+            <Image src="/qnectify-logo.svg" alt="Qnectify Logo" width={64} height={64} />
+            <span className="text-4xl font-extrabold text-white">Qnectify</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 text-center md:text-left">
             Tentang <span className="text-[#b3d1ff]">Kami</span>
@@ -33,7 +33,7 @@ export default function AboutHeroSection() {
         <div className="flex-1 flex justify-center">
           <Image
             src="/about-hero-illustration.png"
-            alt="Quizzo Team"
+            alt="Qnectify Team"
             width={340}
             height={340}
             className="rounded-full shadow-xl"

@@ -14,15 +14,16 @@ export default async function StudyGroupsPage() {
 
   // Mapping ke StudyGroupCardProps
   const mappedGroups = studyGroups.map((group: any, idx: number) => ({
+    id: group.id,
     title: group.name,
-    description: group.description,
-    memberCount: group.member_count,
-    maxMember: group.max_member,
-    isPrivate: group.is_private,
-    inviteCode: group.invite_code,
-    // icon: bisa di-random atau default, misal:
+    desc: group.description,
+    members: group.member_count,
+    quizDone: group.quiz_done ?? 0,
+    quizTotal: group.quiz_total ?? 0,
+    progress: group.progress ?? 0,
     icon: ["math", "physics", "english"][idx % 3] as "math" | "physics" | "english",
-    // tambahkan properti lain sesuai kebutuhan StudyGroupCard
+    inviteCode: group.invite_code,
+    token,
   }));
 
   return (
@@ -31,7 +32,7 @@ export default async function StudyGroupsPage() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         <StudyGroupHeader />
         <StudyGroupCreateButton token={token} />
-        <StudyGroupList groups={mappedGroups} />
+        <StudyGroupList groups={mappedGroups} token={token} />
       </main>
       <Footer />
     </div>

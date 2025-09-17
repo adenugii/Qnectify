@@ -15,14 +15,14 @@ const slides = [
 		logoText: "Smart Quiz",
 	},
 	{
-		icon: "/quizzo-logo.svg",
+		icon: "/qnectify-logo.svg",
 		title: "Smart Quiz Generator",
 		desc: "Buat quiz pintar dengan teknologi AI terdepan",
 		badges: [
 			{ icon: <span className="font-bold text-yellow-400">XP</span>, style: "right-8 bottom-8 bg-white" },
 			{ icon: <FaStar className="text-green-500" />, style: "left-8 top-8 bg-white" },
 		],
-		logoText: "QUIZZO",
+		logoText: "Qnectify",
 	},
 	{
 		icon: "/brain.svg",

@@ -46,7 +46,7 @@
 // 					Pencapaian Kami
 // 				</h2>
 // 				<p className="text-gray-500 mb-12 text-center">
-// 					Beberapa keunggulan Quizzo yang telah terbukti secara nyata
+// 					Beberapa keunggulan Qnectify yang telah terbukti secara nyata
 // 				</p>
 // 				<div className="space-y-8">
 // 					{items.map((item, i) => (

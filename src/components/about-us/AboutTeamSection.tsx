@@ -65,7 +65,7 @@ export default function AboutTeamSection() {
                 <div className="font-bold text-lg text-gray-800">{member.name}</div>
                 <div className="text-gray-500 text-sm">{member.role}</div>
                 <div className="mt-4">
-                  <Image src="/quizzo-logo.svg" alt="Quizzo" width={40} height={40} />
+                  <Image src="/qnectify-logo.svg" alt="Qnectify" width={40} height={40} />
                 </div>
               </div>
             </div>

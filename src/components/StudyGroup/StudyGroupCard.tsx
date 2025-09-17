@@ -1,9 +1,14 @@
+"use client";
 import { FaCalculator, FaAtom } from "react-icons/fa";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { HiUsers } from "react-icons/hi2";
 import { MdOutlineBarChart } from "react-icons/md";
+import { useRouter } from "next/navigation";
+import { joinGroup } from "@/services/groupservices";
+import { useState } from "react";
 
 export interface StudyGroupCardProps {
+  id: string;
   title: string;
   desc: string;
   members: number;
@@ -11,9 +16,12 @@ export interface StudyGroupCardProps {
   quizTotal: number;
   progress: number; // 0-100
   icon: "math" | "physics" | "english";
+  inviteCode: string;
+  token?: string;
 }
 
 export default function StudyGroupCard({
+  id,
   title,
   desc,
   members,
@@ -21,12 +29,29 @@ export default function StudyGroupCard({
   quizTotal,
   progress,
   icon,
+  inviteCode,
+  token,
 }: StudyGroupCardProps) {
   // Pilih ikon sesuai tipe grup
   const iconMap = {
     math: <FaCalculator className="text-[#2563eb] text-lg" />,
     physics: <FaAtom className="text-[#2563eb] text-lg" />,
     english: <PiBookOpenTextFill className="text-[#2563eb] text-lg" />,
+  };
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const handleJoin = async () => {
+    setLoading(true);
+    try {
+      await joinGroup(id, inviteCode, token);
+      alert("Berhasil masuk grup! Anda sekarang menjadi anggota grup ini.");
+      router.push(`/group-detail?id=${id}`);
+    } catch (err) {
+      alert("Gagal masuk grup");
+    }
+    setLoading(false);
   };
 
   return (
@@ -62,8 +87,12 @@ export default function StudyGroupCard({
         </div>
       </div>
       {/* Tombol Masuk Grup */}
-      <button className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition mt-2">
-        Masuk Grup
+      <button
+        className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition mt-2"
+        onClick={handleJoin}
+        disabled={loading}
+      >
+        {loading ? "Masuk..." : "Masuk Grup"}
       </button>
     </div>
   );
