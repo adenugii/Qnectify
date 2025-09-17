@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Buat Quiz", href: "/quiz-maker" },
   { name: "Studi grup", href: "/study-groups" },
   { name: "Tentang", href: "/about-us" },
-  { name: "Kontak", href: "/history" },
+  { name: "History Quiz", href: "/history" },
 ];
 
 export default function Navbar() {

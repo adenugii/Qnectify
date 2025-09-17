@@ -1,5 +1,5 @@
 "use client";
-import { signup } from "@/services/authservices";
+import { signup, signin } from "@/services/authservices";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FaLightbulb, FaCrown, FaStar } from "react-icons/fa";
@@ -40,7 +40,21 @@ const slides = [
 	},
 ];
 
-export default function RegisterAuthLayout() {
+export default function RegisterAuthLayout({ onRegister }: {
+  onRegister?: ({
+    email,
+    username,
+    password,
+    setError,
+    setLoading,
+  }: {
+    email: string;
+    username: string;
+    password: string;
+    setError: (msg: string | null) => void;
+    setLoading: (v: boolean) => void;
+  }) => Promise<void>;
+}) {
 	const [idx, setIdx] = useState(0);
 	const [agree, setAgree] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -83,6 +97,10 @@ export default function RegisterAuthLayout() {
 		}
 		if (password !== confirm) {
 			setError("Password dan konfirmasi password tidak sama.");
+			return;
+		}
+		if (onRegister) {
+			await onRegister({ email, username, password, setError, setLoading });
 			return;
 		}
 		setLoading(true);
