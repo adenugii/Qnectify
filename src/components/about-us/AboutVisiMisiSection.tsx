@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 
 export default function AboutVisiMisiSection() {
@@ -24,7 +25,7 @@ export default function AboutVisiMisiSection() {
           <div className="bg-[#2563eb] rounded-[2.5rem] flex flex-col items-center justify-center p-10 shadow-xl w-[320px] h-[320px] relative">
             <Image src="/about-icon-rocket.png" alt="Rocket" width={140} height={140} />
             <div className="text-white text-center text-base italic mt-6">
-              "Transformasi digital pendidikan dimulai dari sini"
+              &ldquo;Transformasi digital pendidikan dimulai dari sini&rdquo;
             </div>
           </div>
         </div>

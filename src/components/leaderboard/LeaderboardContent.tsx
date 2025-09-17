@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 // filepath: c:\Data\Project\quizzo\src\components\leaderboard\LeaderboardContent.tsx
 import { useState } from "react";
