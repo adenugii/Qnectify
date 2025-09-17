@@ -4,6 +4,7 @@ import { HiUsers } from "react-icons/hi2";
 import { MdOutlineBarChart } from "react-icons/md";
 
 export interface StudyGroupCardProps {
+  id: string; // Added id to match API response
   title: string;
   desc: string;
   members: number;
@@ -14,6 +15,7 @@ export interface StudyGroupCardProps {
 }
 
 export default function StudyGroupCard({
+  id,
   title,
   desc,
   members,
