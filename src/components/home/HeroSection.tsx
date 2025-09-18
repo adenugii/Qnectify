@@ -31,8 +31,13 @@ export default function HeroSection() {
         </div>
         <div className="flex-1 flex justify-center">
           <Image
+<<<<<<< HEAD
             src="/hero-mockup.png"
             alt="Qnectify App Mockup"
+=======
+            src="/rocket.svg"
+            alt="Quizzo App Mockup"
+>>>>>>> rafi
             width={370}
             height={370}
             className="rounded-xl shadow-xl"

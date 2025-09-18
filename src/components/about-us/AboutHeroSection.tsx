@@ -6,10 +6,11 @@ export default function AboutHeroSection() {
     <section className="bg-gradient-to-r from-[#2563eb] to-[#1e40af] py-16 px-4  min-h-[480px] flex items-center">
       <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
         <div className="flex-1 flex flex-col items-center md:items-start justify-center">
-          <div className="flex items-center gap-3 mb-6 justify-center md:justify-start w-full">
-            <Image src="/qnectify-logo.svg" alt="Qnectify Logo" width={64} height={64} />
-            <span className="text-4xl font-extrabold text-white">Qnectify</span>
-          </div>
+         <div className="flex items-center gap-4 mb-6 justify-center md:justify-center w-full bg-white p-2 rounded-full shadow-lg">
+  <Image src="/logo_besar.png" alt="Quizzo Logo" width={64} height={64} />
+  <span className="text-4xl font-extrabold text-[#2563eb]">QNECTIFY</span>
+</div>
+
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 text-center md:text-left">
             Tentang <span className="text-[#b3d1ff]">Kami</span>
           </h1>
@@ -19,39 +20,42 @@ export default function AboutHeroSection() {
           <div className="w-full flex justify-center md:justify-start">
             <a
               href="#about-journey"
-              className="inline-flex items-center gap-2 bg-white text-[#2563eb] font-semibold px-6 py-3 rounded-full shadow hover:bg-[#f0f6ff] transition"
+              className="inline-flex items-center justify-center  bg-white text-[#2563eb] font-semibold px-6 py-3 rounded-full shadow hover:bg-[#f0f6ff] transition"
             >
               <span>
                 <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                  <path fill="#2563eb" d="M10 2a1 1 0 0 1 1 1v11.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 1 1 5.707 11.293L9 14.586V3a1 1 0 0 1 1-1z"/>
+                  <path fill="#2563eb"/>
                 </svg>
               </span>
               Mulai Eksplorasi
             </a>
           </div>
         </div>
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center relative">
           <Image
-            src="/about-hero-illustration.png"
-            alt="Qnectify Team"
-            width={340}
-            height={340}
-            className="rounded-full shadow-xl"
+            src="/team.png"
+            alt="Quizzo Team"
+            width={300}
+            height={300}
+            className="rounded-full z-10"
           />
+          {/* Floating icons mengelilingi team.png */}
+          <div className="absolute" style={{ left: '10%', top: '-30px' }}>
+            <Image src="/bola1.png" alt="" width={40} height={40} />
+          </div>
+          <div className="absolute" style={{ right: '10%', top: '0' }}>
+            <Image src="/bola2.png" alt="" width={40} height={40} />
+          </div>
+          <div className="absolute" style={{ left: '-20px', bottom: '20%' }}>
+            <Image src="/bola3.png" alt="" width={40} height={40} />
+          </div>
+          <div className="absolute" style={{ right: '-20px', bottom: '30%' }}>
+            <Image src="/bola4.png" alt="" width={40} height={40} />
+          </div>
+          <div className="absolute" style={{ left: '50%', bottom: '-30px', transform: 'translateX(-50%)' }}>
+            <Image src="/bola5.png" alt="" width={40} height={40} />
+          </div>
         </div>
-      </div>
-      {/* Floating icons */}
-      <div className="absolute left-10 top-10 z-0">
-        <Image src="/about-icon-rocket.png" alt="" width={40} height={40} />
-      </div>
-      <div className="absolute right-10 top-20 z-0">
-        <Image src="/about-icon-lightbulb.png" alt="" width={40} height={40} />
-      </div>
-      <div className="absolute left-20 bottom-10 z-0">
-        <Image src="/about-icon-xp.png" alt="" width={40} height={40} />
-      </div>
-      <div className="absolute right-24 bottom-16 z-0">
-        <Image src="/about-icon-trophy.png" alt="" width={40} height={40} />
       </div>
     </section>
   );

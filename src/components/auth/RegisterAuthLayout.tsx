@@ -1,47 +1,46 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { signup } from "@/services/authservices";
+import { signup, signin } from "@/services/authservices";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { FaLightbulb, FaCrown, FaStar } from "react-icons/fa";
 import Image from "next/image";
 
 const slides = [
 	{
-		icon: "/brain.svg",
+		icon: "/loginbola2.png",
 		title: "Smart Quiz Generator",
 		desc: "Belajar jadi seru dengan Quiz AI! Buat quiz pintar dengan teknologi AI terdepan",
-		badges: [
-			{ icon: <FaLightbulb className="text-yellow-400" />, style: "left-8 top-8 bg-white" },
-			{ icon: <FaCrown className="text-yellow-500" />, style: "right-8 top-16 bg-white" },
-			{ icon: <FaStar className="text-pink-500" />, style: "right-8 bottom-8 bg-white" },
-		],
 		logoText: "",
 	},
 	{
-		icon: "/qnectify-logo.svg",
+		icon: "/logo_besar.png",
 		title: "Smart Quiz Generator",
 		desc: "Buat quiz pintar dengan teknologi AI terdepan",
-		badges: [
-			{ icon: <FaCrown className="text-yellow-500" />, style: "right-8 top-8 bg-white" },
-			{ icon: <FaStar className="text-pink-500" />, style: "left-8 bottom-8 bg-white" },
-			{ icon: <span className="font-bold text-[#2563eb]">XP</span>, style: "left-8 top-16 bg-white" },
-		],
-		logoText: "Qnectify",
+		logoText: "QUIZZO",
 	},
 	{
-		icon: "/smart-quiz-logo.svg",
+		icon: "/loginbola1.png",
 		title: "Smart Quiz Generator",
 		desc: "Belajar jadi seru dengan Quiz AI! Buat quiz pintar dengan teknologi AI terdepan",
-		badges: [
-			{ icon: <FaLightbulb className="text-yellow-400" />, style: "right-8 bottom-8 bg-white" },
-			{ icon: <FaStar className="text-pink-500" />, style: "left-8 top-8 bg-white" },
-		],
 		logoText: "Smart Quiz",
 	},
 ];
 
-export default function RegisterAuthLayout() {
+export default function RegisterAuthLayout({ onRegister }: {
+  onRegister?: ({
+    email,
+    username,
+    password,
+    setError,
+    setLoading,
+  }: {
+    email: string;
+    username: string;
+    password: string;
+    setError: (msg: string | null) => void;
+    setLoading: (v: boolean) => void;
+  }) => Promise<void>;
+}) {
 	const [idx, setIdx] = useState(0);
 	const [agree, setAgree] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -86,6 +85,10 @@ export default function RegisterAuthLayout() {
 			setError("Password dan konfirmasi password tidak sama.");
 			return;
 		}
+		if (onRegister) {
+			await onRegister({ email, username, password, setError, setLoading });
+			return;
+		}
 		setLoading(true);
 		setError(null);
 		try {
@@ -113,20 +116,12 @@ export default function RegisterAuthLayout() {
 							>
 								<div className="relative mb-6">
 									<div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg mx-auto">
-										{slide.icon.endsWith(".svg") ? (
+										{slide.icon.endsWith(".png") ? (
 											<Image src={slide.icon} alt="icon" width={56} height={56} />
 										) : (
 											slide.icon
 										)}
 									</div>
-									{slide.badges.map((b, j) => (
-										<span
-											key={j}
-											className={`absolute ${b.style} w-8 h-8 rounded-full flex items-center justify-center shadow-md`}
-										>
-											{b.icon}
-										</span>
-									))}
 								</div>
 								<div className="text-white text-2xl font-bold text-center mb-2">{slide.title}</div>
 								<div className="text-blue-100 text-base text-center mb-6">{slide.desc}</div>

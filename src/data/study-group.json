@@ -1,7 +1,7 @@
 [
   {
-    "title": "Matematika Kelas 12",
-    "desc": "Grup belajar untuk persiapan ujian matematika",
+    "title": "Matematika Dasar - Aljabar Linear",
+    "desc": "Grup belajar untuk persiapan ujian matematika dan latihan soal HOTS.",
     "members": 12,
     "quizDone": 8,
     "quizTotal": 15,
@@ -9,75 +9,48 @@
     "icon": "math"
   },
   {
-    "title": "Fisika Modern",
-    "desc": "Eksplorasi konsep fisika quantum dan relativitas",
+    "title": "Fisika - Mekanika Newton",
+    "desc": "Eksplorasi konsep fisika quantum, mekanika, dan relativitas.",
     "members": 8,
-    "quizDone": 5,
-    "quizTotal": 10,
-    "progress": 50,
+    "quizDone": 3,
+    "quizTotal": 15,
+    "progress": 20,
     "icon": "physics"
   },
   {
-    "title": "Bahasa Inggris TOEFL",
-    "desc": "Persiapan ujian TOEFL bersama",
+    "title": "Bahasa Inggris - Grammar Tenses",
+    "desc": "Persiapan ujian TOEFL, latihan grammar dan speaking.",
     "members": 15,
     "quizDone": 12,
-    "quizTotal": 20,
-    "progress": 60,
+    "quizTotal": 15,
+    "progress": 80,
     "icon": "english"
   },
   {
-    "title": "Matematika Kelas 12",
-    "desc": "Grup belajar untuk persiapan ujian matematika",
-    "members": 12,
-    "quizDone": 8,
-    "quizTotal": 15,
-    "progress": 53,
+    "title": "Geografi Dunia",
+    "desc": "Belajar geografi dunia dan peta interaktif.",
+    "members": 10,
+    "quizDone": 7,
+    "quizTotal": 12,
+    "progress": 58,
     "icon": "math"
   },
   {
-    "title": "Fisika Modern",
-    "desc": "Eksplorasi konsep fisika quantum dan relativitas",
-    "members": 8,
-    "quizDone": 5,
+    "title": "Kimia SMA Kelas 11",
+    "desc": "Diskusi soal-soal kimia dan eksperimen sederhana.",
+    "members": 9,
+    "quizDone": 6,
     "quizTotal": 10,
-    "progress": 50,
+    "progress": 60,
     "icon": "physics"
   },
   {
-    "title": "Bahasa Inggris TOEFL",
-    "desc": "Persiapan ujian TOEFL bersama",
-    "members": 15,
-    "quizDone": 12,
-    "quizTotal": 20,
-    "progress": 60,
-    "icon": "english"
-  },
-  {
-    "title": "Matematika Kelas 12",
-    "desc": "Grup belajar untuk persiapan ujian matematika",
-    "members": 12,
-    "quizDone": 8,
-    "quizTotal": 15,
-    "progress": 53,
-    "icon": "math"
-  },
-  {
-    "title": "Fisika Modern",
-    "desc": "Eksplorasi konsep fisika quantum dan relativitas",
-    "members": 8,
-    "quizDone": 5,
-    "quizTotal": 10,
-    "progress": 50,
-    "icon": "physics"
-  },
-  {
-    "title": "Bahasa Inggris TOEFL",
-    "desc": "Persiapan ujian TOEFL bersama",
-    "members": 15,
-    "quizDone": 12,
-    "quizTotal": 20,
-    "progress": 60,
+    "title": "English Conversation Club",
+    "desc": "Latihan speaking dan listening bareng native speaker.",
+    "members": 20,
+    "quizDone": 15,
+    "quizTotal": 25,
+    "progress": 70,
     "icon": "english"
   }
 ]

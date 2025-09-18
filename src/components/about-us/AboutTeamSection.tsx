@@ -4,31 +4,31 @@ import { FaRocket, FaPen, FaPalette, FaChartLine } from "react-icons/fa";
 
 const team = [
   {
-    name: "Rizky",
+    name: "Rafi",
     role: "Founder & Engineer",
     avatar: "/avatars/rizky.png",
-    icon: <FaRocket size={32} />,
+    icon: <FaRocket className="text-white" size={32} />,
     quote: '“Suka kopi hitam dan coding sampai pagi. Mimpinya bikin pendidikan jadi accessible untuk semua!”',
   },
   {
-    name: "Dewi",
+    name: "Ade",
     role: "AI Engineer",
     avatar: "/avatars/dewi.png",
-    icon: <FaPen size={32} />,
+    icon: <FaPen className="text-white" size={32} />,
     quote: '“Pecinta algoritma dan machine learning. Bisa debug code sambil minum bubble tea!”',
   },
   {
-    name: "Budi",
+    name: "Huda",
     role: "UI/UX Designer",
     avatar: "/avatars/budi.png",
-    icon: <FaPalette size={32} />,
+    icon: <FaPalette className="text-white" size={32} />,
     quote: '“Obsesi dengan pixel perfect dan user experience. Koleksi font lebih dari 500!”',
   },
   {
-    name: "Sari",
+    name: "Kohi",
     role: "Marketing",
     avatar: "/avatars/sari.png",
-    icon: <FaChartLine size={32} />,
+    icon: <FaChartLine className="text-white" size={32} />,
     quote: '“Data-driven marketer yang suka eksperimen. Bisa bikin konten viral sambil makan mie ayam!”',
   },
 ];
@@ -65,7 +65,7 @@ export default function AboutTeamSection() {
                 <div className="font-bold text-lg text-gray-800">{member.name}</div>
                 <div className="text-gray-500 text-sm">{member.role}</div>
                 <div className="mt-4">
-                  <Image src="/qnectify-logo.svg" alt="Qnectify" width={40} height={40} />
+                  <Image src="/logo_besar.png" alt="Quizzo" width={40} height={40} />
                 </div>
               </div>
             </div>

@@ -8,8 +8,8 @@ export default function Footer() {
         {/* Logo & desc */}
         <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
           <div className="flex items-center gap-3">
-            <Image src="/qnectify-logo.svg" alt="Qnectify Logo" width={56} height={56} />
-            <span className="text-4xl font-extrabold text-[#2563eb]">Qnectify</span>
+            <Image src="/logo_besar.png" alt="Quizzo Logo" width={56} height={56} />
+            <span className="text-4xl font-extrabold text-[#2563eb]">QNECTIFY</span>
           </div>
           <p className="text-[#3b82f6] mt-4 text-sm max-w-xs">
             Upload materi apapun dan dapatkan quiz secara otomatis, belajar jadi seru dengan XP, level, dan badge!
