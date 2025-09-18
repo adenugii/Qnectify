@@ -19,7 +19,7 @@ interface FeedItem {
 export default function FeedSection({ token }: { token: string }) {
   const [filter, setFilter] = useState<'terbaru' | 'populer' | 'kesulitan'>('terbaru');
   const [feed, setFeed] = useState<FeedItem[]>([]);
-  const [userMap, setUserMap] = useState<Record<string, any>>({});
+  const [userMap, setUserMap] = useState<Record<string, { username?: string; image_url?: { String: string; Valid: boolean } }>>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export default function FeedSection({ token }: { token: string }) {
       const data = await getFeed(token);
       setFeed(data);
       // Ambil semua user unik dari feed
-      const userIds = Array.from(new Set(data.map((q: any) => q.created_by))) as string[];
-      const userMapTemp: Record<string, any> = {};
+      const userIds = Array.from(new Set(data.map((q: FeedItem) => q.created_by))) as string[];
+      const userMapTemp: Record<string, { username?: string; image_url?: { String: string; Valid: boolean } }> = {};
       await Promise.all(userIds.map(async (id: string) => {
         const user = await getUserById(id, token);
         if (user) userMapTemp[id] = user;

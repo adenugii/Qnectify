@@ -89,7 +89,7 @@ async function QuizHistorySection() {
 async function PerformanceOverviewSectionServer() {
   const cookieStore = cookies();
   const token = (await cookieStore).get("token")?.value || "";
-  let attempts: any[] = [];
+  let attempts: QuizAttempt[] = [];
   try {
     const res = await getQuizAttempts(token);
     attempts = res.attempts || [];
@@ -115,8 +115,8 @@ async function PerformanceOverviewSectionServer() {
       <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-6">
         <h3 className="text-lg font-semibold text-gray-800 mb-2">Your Performance Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <div key={i} className="flex flex-col items-center gap-2">
+          {stats.map((s) => (
+            <div key={s.label} className="flex flex-col items-center gap-2">
               <div>{s.icon}</div>
               <div className="text-2xl font-bold text-gray-800">{s.value}</div>
               <div className="text-gray-500 text-sm text-center">{s.label}</div>

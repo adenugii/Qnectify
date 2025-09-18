@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMedal, FaCode, FaBookOpen, FaLeaf, FaFire, FaTrophy } from "react-icons/fa";
+import { FaMedal, FaTrophy } from "react-icons/fa";
 
 interface Group {
   name: string;
@@ -19,7 +19,7 @@ interface LeaderboardGroupProps {
 }
 
 // Ganti semua any dengan tipe spesifik
-interface GroupLeaderboard {
+interface GroupLeaderboardType {
   id: string;
   name: string;
   xp: number;

@@ -7,7 +7,7 @@ interface MateriQuiz {
   difficulty: string;
   time_limit?: { String: string; Valid: boolean };
   created_by: string;
-  questions: any[];
+  questions: { id: string; quiz_id: string; question_text: string; options: { id: string; content: string }[] }[];
   created_at: string;
 }
 
@@ -64,7 +64,7 @@ export default function MateriSayaSection({ quiz }: { quiz: MateriQuiz[] }) {
             <h3 className="font-semibold text-gray-900 text-base truncate" style={{maxWidth: '100%'}}>{truncateTitle(item.title)}</h3>
             <p className="text-sm text-gray-500">{item.description}</p>
             <div className="flex items-center justify-between mt-2">
-              <span className="text-xs text-gray-500">{item.total_questions ?? 0} soal tersedia</span>
+              <span className="text-xs text-gray-500">{item.questions ? item.questions.length : 0} soal tersedia</span>
               <Link href={`/quiz-maker/${item.id}`}>
                 <button className="bg-[#2563eb] text-white text-sm font-medium px-4 py-1.5 rounded shadow hover:bg-[#1e40af] transition">Mulai Quiz</button>
               </Link>

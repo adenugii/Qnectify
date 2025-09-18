@@ -9,7 +9,7 @@ interface QuizDetail {
   difficulty: string;
   time_limit?: { String: string; Valid: boolean };
   created_by: string;
-  questions: any[];
+  questions: { id: string; quiz_id: string; question_text: string; options: { id: string; content: string }[] }[];
   created_at: string;
 }
 
@@ -62,7 +62,7 @@ export default function QuizDetailSection({ quiz }: { quiz: QuizDetail }) {
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div className="bg-[#f8fafc] rounded-lg p-3 flex flex-col items-center">
           <div className="text-xs text-gray-500 mb-1">Jumlah Soal</div>
-          <div className="font-bold text-lg text-[#2563eb]">{quiz.total_questions || (quiz.questions ? quiz.questions.length : 0)} Soal</div>
+          <div className="font-bold text-lg text-[#2563eb]">{quiz.questions ? quiz.questions.length : 0} Soal</div>
         </div>
         <div className="bg-[#f8fafc] rounded-lg p-3 flex flex-col items-center">
           <div className="text-xs text-gray-500 mb-1">Estimasi Waktu</div>
