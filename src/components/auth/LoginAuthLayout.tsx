@@ -5,33 +5,24 @@ import Image from "next/image";
 
 const slides = [
 	{
-		icon: "/smart-quiz-logo.svg",
+		icon: "/logo_besar.png",
 		title: "Belajar jadi seru dengan Quiz AI!",
 		desc: "Tingkatkan kemampuan belajarmu dengan quiz yang dibuat khusus oleh AI",
-		badges: [
-			{ icon: <FaStar className="text-green-500" />, style: "left-4 top-24 bg-white" },
-			{ icon: <FaLightbulb className="text-yellow-400" />, style: "right-4 top-12 bg-white" },
-		],
+		
 		logoText: "Smart Quiz",
 	},
 	{
-		icon: "/quizzo-logo.svg",
+		icon: "/loginbola1.png",
 		title: "Smart Quiz Generator",
 		desc: "Buat quiz pintar dengan teknologi AI terdepan",
-		badges: [
-			{ icon: <span className="font-bold text-yellow-400">XP</span>, style: "right-8 bottom-8 bg-white" },
-			{ icon: <FaStar className="text-green-500" />, style: "left-8 top-8 bg-white" },
-		],
+
 		logoText: "QUIZZO",
 	},
 	{
-		icon: "/brain.svg",
+		icon: "/loginbola2.png",
 		title: "Quiz AI Otomatis",
 		desc: "Belajar jadi seru dengan Quiz AI! Buat quiz pintar dengan teknologi AI terdepan",
-		badges: [
-			{ icon: <FaLightbulb className="text-yellow-400" />, style: "left-8 bottom-8 bg-white" },
-			{ icon: <FaStar className="text-green-500" />, style: "right-8 top-8 bg-white" },
-		],
+
 		logoText: "",
 	},
 ];
@@ -96,20 +87,12 @@ export default function LoginAuthLayout({ onLogin }: LoginAuthLayoutProps) {
 							>
 								<div className="relative mb-6">
 									<div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg mx-auto">
-										{slide.icon.endsWith(".svg") ? (
-											<Image src={slide.icon} alt="icon" width={56} height={56} />
+										{slide.icon.endsWith(".png") ? (
+											<Image src={slide.icon} alt="login" width={56} height={56} />
 										) : (
 											slide.icon
 										)}
 									</div>
-									{slide.badges.map((b, j) => (
-										<span
-											key={j}
-											className={`absolute ${b.style} w-8 h-8 rounded-full flex items-center justify-center shadow-md`}
-										>
-											{b.icon}
-										</span>
-									))}
 								</div>
 								<div className="text-white text-2xl font-bold text-center mb-2">{slide.title}</div>
 								<div className="text-blue-100 text-base text-center mb-6">{slide.desc}</div>

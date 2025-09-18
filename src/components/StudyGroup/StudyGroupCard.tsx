@@ -1,7 +1,9 @@
+"use client";
 import { FaCalculator, FaAtom } from "react-icons/fa";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { HiUsers } from "react-icons/hi2";
 import { MdOutlineBarChart } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 export interface StudyGroupCardProps {
   title: string;
@@ -22,11 +24,17 @@ export default function StudyGroupCard({
   progress,
   icon,
 }: StudyGroupCardProps) {
+  const router = useRouter();
   // Pilih ikon sesuai tipe grup
   const iconMap = {
     math: <FaCalculator className="text-[#2563eb] text-lg" />,
     physics: <FaAtom className="text-[#2563eb] text-lg" />,
     english: <PiBookOpenTextFill className="text-[#2563eb] text-lg" />,
+  };
+
+  // Routing ke group-detail (dummy, bisa diubah ke dynamic jika ada id)
+  const handleMasukGrup = () => {
+    router.push("/group-detail");
   };
 
   return (
@@ -62,7 +70,10 @@ export default function StudyGroupCard({
         </div>
       </div>
       {/* Tombol Masuk Grup */}
-      <button className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition mt-2">
+      <button
+        className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition mt-2"
+        onClick={handleMasukGrup}
+      >
         Masuk Grup
       </button>
     </div>

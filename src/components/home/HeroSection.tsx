@@ -31,7 +31,7 @@ export default function HeroSection() {
         </div>
         <div className="flex-1 flex justify-center">
           <Image
-            src="/hero-mockup.png"
+            src="/rocket.svg"
             alt="Quizzo App Mockup"
             width={370}
             height={370}

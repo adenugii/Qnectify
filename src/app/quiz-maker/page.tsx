@@ -1,14 +1,17 @@
+import { cookies } from "next/headers";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import UploadFormSection from "@/components/quiz-maker/UploadFormSection";
 import TipsSection from "@/components/quiz-maker/TipsSection";
 import MateriSayaSection from "@/components/quiz-maker/MateriSayaSection";
-import { cookies } from "next/headers";
+import { getMyQuiz } from "@/services/quizservices";
 
 // Halaman Upload Materi
 export default async function UploadPage() {
   const cookieStore = cookies();
   const token = (await cookieStore).get("token")?.value || "";
+  const response = await getMyQuiz(token);
+  const quiz = Array.isArray(response) ? response : response?.quiz || [];
 
   return (
     <div className="min-h-screen bg-[#fafbfc]">
@@ -34,7 +37,7 @@ export default async function UploadPage() {
         </div>
 
         {/* Materi Saya */}
-        <MateriSayaSection />
+        <MateriSayaSection quiz={quiz} />
       </main>
 
       <Footer />

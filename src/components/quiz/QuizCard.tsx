@@ -58,7 +58,7 @@ export default function QuizCard({
         </span>
       </div>
       {/* Progress Bar */}
-      <div className="mb-2">
+      {/* <div className="mb-2">
         <div className="flex items-center justify-between mb-1">
           <span className="text-xs text-gray-500">Progress:</span>
           <span className="text-xs text-gray-500">{progress}%</span>
@@ -73,7 +73,7 @@ export default function QuizCard({
             style={{ width: `${progress}%` }}
           />
         </div>
-      </div>
+      </div> */}
       {/* Pertanyaan */}
       <div className="font-bold text-xl text-gray-900 mb-2 leading-relaxed">
         {question}
@@ -119,7 +119,7 @@ export default function QuizCard({
         </button>
       ) : status === "progress" ? (
         <button className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition">
-          Lanjutkan Quiz
+          
         </button>
       ) : (
         <button className="w-full py-2 rounded-md bg-[#2563eb] text-white font-semibold text-base shadow hover:bg-[#1e40af] transition">

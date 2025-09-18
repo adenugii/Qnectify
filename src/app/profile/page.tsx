@@ -24,7 +24,7 @@ export default async function ProfilePage() {
           <ProfileCard user={user} />
 
           <Badges />
-          <QuizHistory />
+          <QuizHistory token={token}  />
         </div>
         {/* Kanan: Leaderboard */}
         <aside className="w-full md:w-[340px] flex-shrink-0">

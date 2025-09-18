@@ -2,15 +2,15 @@
   "users": [
     {
       "name": "Michael Chen",
-      "avatar": "/leaderboard-1.jpg",
+      "avatar": "/profile.png",
       "level": 25,
       "xp": 2450,
       "badges": ["win", "streak"],
       "isYou": false
     },
     {
-      "name": "Sarah Johnson",
-      "avatar": "/profile-demo.jpg",
+      "name": "Rafiananta",
+      "avatar": "/profile.png",
       "level": 12,
       "xp": 1350,
       "badges": ["win", "streak"],
@@ -18,7 +18,7 @@
     },
     {
       "name": "David Kim",
-      "avatar": "/leaderboard-3.jpg",
+      "avatar": "/profile.png",
       "level": 11,
       "xp": 1290,
       "badges": ["streak", "speed"],
@@ -26,7 +26,7 @@
     },
     {
       "name": "Emma Wilson",
-      "avatar": "/leaderboard-4.jpg",
+      "avatar": "/profile.png",
       "level": 10,
       "xp": 1180,
       "badges": ["perfect"],
@@ -34,7 +34,7 @@
     },
     {
       "name": "David Kim",
-      "avatar": "/leaderboard-3.jpg",
+      "avatar": "/profile.png",
       "level": 11,
       "xp": 1290,
       "badges": ["streak", "speed"],
@@ -42,7 +42,7 @@
     },
     {
       "name": "Emma Wilson",
-      "avatar": "/leaderboard-4.jpg",
+      "avatar": "/profile.png",
       "level": 10,
       "xp": 1180,
       "badges": ["perfect"],
@@ -50,7 +50,7 @@
     },
     {
       "name": "David Kim",
-      "avatar": "/leaderboard-3.jpg",
+      "avatar": "/profile.png",
       "level": 11,
       "xp": 1290,
       "badges": ["streak", "speed"],
@@ -58,7 +58,7 @@
     },
     {
       "name": "Emma Wilson",
-      "avatar": "/leaderboard-4.jpg",
+      "avatar": "/profile.png",
       "level": 10,
       "xp": 1180,
       "badges": ["perfect"],

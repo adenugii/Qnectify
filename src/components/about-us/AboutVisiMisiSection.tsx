@@ -22,7 +22,7 @@ export default function AboutVisiMisiSection() {
         </div>
         <div className="flex-1 flex flex-col items-center">
           <div className="bg-[#2563eb] rounded-[2.5rem] flex flex-col items-center justify-center p-10 shadow-xl w-[320px] h-[320px] relative">
-            <Image src="/about-icon-rocket.png" alt="Rocket" width={140} height={140} />
+            <Image src="/rocket.svg" alt="Rocket" width={200} height={200} />
             <div className="text-white text-center text-base italic mt-6">
               "Transformasi digital pendidikan dimulai dari sini"
             </div>

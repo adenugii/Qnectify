@@ -66,6 +66,9 @@ export default function UploadFormSection({ token }: { token: string }) {
       setLocalError(err.message || "Gagal upload quiz");
     } finally {
       setLoading(false);
+      if (success) {
+        window.location.reload();
+      }
     }
   };
 
