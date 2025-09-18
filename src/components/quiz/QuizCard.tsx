@@ -1,5 +1,4 @@
 import React from "react";
-import { FaRegBookmark } from "react-icons/fa";
 
 // Props untuk QuizCard
 export interface QuizCardProps {

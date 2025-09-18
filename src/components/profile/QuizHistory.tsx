@@ -46,11 +46,11 @@ export default function QuizHistory({ token }: { token?: string })  {
       const sorted = Object.values(bestAttempts).sort((a: QuizAttempt, b: QuizAttempt) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
       setAttempts(sorted.slice(0, 3));
       // Fetch meta quiz
-      const meta: Record<string, any> = {};
+      const meta: QuizMeta = {};
       await Promise.all(sorted.slice(0, 3).map(async (a: QuizAttempt) => {
         if (!a.quiz_id || typeof a.quiz_id !== 'string') return;
         const quiz = await getQuizById(tokenStr, a.quiz_id);
-        if (quiz) meta[a.quiz_id] = quiz;
+        if (quiz) meta[a.quiz_id] = { title: quiz.title, difficulty: quiz.difficulty };
       }));
       setQuizMeta(meta);
       setLoading(false);

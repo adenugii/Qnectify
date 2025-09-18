@@ -52,7 +52,7 @@ async function QuizHistorySection() {
             }
           });
           // Ambil 3 attempt terbaru dari bestAttempts
-          const sorted = Object.values(bestAttempts).sort((a: QuizAttempt, b: QuizAttempt) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
+          const sorted = Object.values(bestAttempts as Record<string, QuizAttempt>).sort((a, b) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
           return sorted.slice(0, 10).map((q: QuizAttempt) => {
             const meta = quizMeta[q.quiz_id] || {};
             const percent = q.total_questions > 0 ? (q.score / q.total_questions) * 100 : 0;
