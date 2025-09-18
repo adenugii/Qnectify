@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.API_BASE_URL || "https://api.gilanghuda.my.id/";
+const API_BASE_URL = process.env.API_BASE_URL || "https://api.gilanghuda.my.id";
 
 export async function createStudyGroup(
   data: {
