@@ -37,17 +37,17 @@ export default function QuizHistory({ token }: { token?: string })  {
       }
       // Filter hanya attempt dengan skor tertinggi untuk setiap quiz_id
       const bestAttempts: Record<string, any> = {};
-      (res.attempts || []).forEach((a: any) => {
+      (res.attempts || []).forEach((a: QuizAttempt) => {
         if (!bestAttempts[a.quiz_id] || a.score > bestAttempts[a.quiz_id].score) {
           bestAttempts[a.quiz_id] = a;
         }
       });
       // Ambil 3 attempt terbaru dari bestAttempts
-      const sorted = Object.values(bestAttempts).sort((a: any, b: any) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
+      const sorted = Object.values(bestAttempts).sort((a: QuizAttempt, b: QuizAttempt) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
       setAttempts(sorted.slice(0, 3));
       // Fetch meta quiz
       const meta: Record<string, any> = {};
-      await Promise.all(sorted.slice(0, 3).map(async (a: any) => {
+      await Promise.all(sorted.slice(0, 3).map(async (a: QuizAttempt) => {
         const quiz = await getQuizById(token || "", a.quiz_id);
         if (quiz) meta[a.quiz_id] = quiz;
       }));

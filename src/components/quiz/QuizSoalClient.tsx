@@ -73,14 +73,23 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   }, [quizId, token]);
 
   useEffect(() => {
-    // Set selected sesuai jawaban yang sudah ada di answers saat navigasi soal
-    if (quiz && question && answers) {
-      const idx = question.options.findIndex((opt) => opt.id === answers[question.id]);
-      setSelected(idx);         
+    if (!quiz) {
+      setSelected(-1);
+      return;
+    }
+    const current = quiz.questions.findIndex((q) => q.id === soalId);
+    if (current === -1) {
+      setSelected(-1);
+      return;
+    }
+    const question = quiz.questions[current];
+    if (answers && question) {
+      const idx = question.options.findIndex((opt: QuizOption) => opt.id === answers[question.id]);
+      setSelected(idx);
     } else {
       setSelected(-1);
     }
-  }, [soalId, quiz]); // Hapus answers dari dependency agar tidak error
+  }, [soalId, quiz, answers]);
 
   if (loading) {
     return <div className="text-center mt-10 text-[#2563eb]">Loading...</div>;
