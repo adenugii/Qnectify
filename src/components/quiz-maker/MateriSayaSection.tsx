@@ -1,6 +1,17 @@
 import Link from "next/link";
 
-export default function MateriSayaSection({ quiz }: { quiz: any[] }) {
+interface MateriQuiz {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  time_limit?: { String: string; Valid: boolean };
+  created_by: string;
+  questions: any[];
+  created_at: string;
+}
+
+export default function MateriSayaSection({ quiz }: { quiz: MateriQuiz[] }) {
   function formatDate(dateStr: string) {
     if (!dateStr) return "-";
     const date = new Date(dateStr);
@@ -44,7 +55,7 @@ export default function MateriSayaSection({ quiz }: { quiz: any[] }) {
         </a>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
-        {quiz.map((item: any) => (
+        {quiz.map((item: MateriQuiz) => (
           <div key={item.id} className={`bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border-t-4 ${getDifficultyColor(item.difficulty).split(' ')[2]}`}>
             <div className="flex items-center gap-2">
               <span className={`${getDifficultyColor(item.difficulty).split(' ').slice(0,2).join(' ')} text-xs font-semibold px-2 py-0.5 rounded`}>{item.difficulty}</span>

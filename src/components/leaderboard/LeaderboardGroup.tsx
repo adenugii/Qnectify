@@ -18,13 +18,13 @@ interface LeaderboardGroupProps {
   setPage: (page: number) => void;
 }
 
-const groupIcon: Record<string, React.ReactElement> = {
-  yellow: <FaMedal className="text-yellow-400" />,
-  blue: <FaCode className="text-blue-500" />,
-  purple: <FaBookOpen className="text-purple-500" />,
-  green: <FaLeaf className="text-green-500" />,
-  red: <FaFire className="text-red-500" />,
-};
+// Ganti semua any dengan tipe spesifik
+interface GroupLeaderboard {
+  id: string;
+  name: string;
+  xp: number;
+  members: number;
+}
 
 export default function LeaderboardGroup({ groups, page, setPage }: LeaderboardGroupProps) {
   return (

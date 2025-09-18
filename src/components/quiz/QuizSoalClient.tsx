@@ -8,9 +8,31 @@ import Footer from "@/components/common/Footer";
 import { useRouter } from "next/navigation";
 import { getQuizById, attemptQuiz, getQuizAttempts } from "@/services/quizservices";
 
+// Ganti semua any dengan tipe spesifik
+interface Quiz {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  time_limit?: { String: string; Valid: boolean };
+  created_by: string;
+  questions: QuizQuestion[];
+  created_at: string;
+}
+interface QuizQuestion {
+  id: string;
+  quiz_id: string;
+  question_text: string;
+  options: QuizOption[];
+}
+interface QuizOption {
+  id: string;
+  content: string;
+}
+
 export default function QuizSoalClient({ quizId, soalId, token }: { quizId: string; soalId: string; token: string }) {
   const router = useRouter();
-  const [quiz, setQuiz] = useState<any>(null);
+  const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<number>(-1);
   const [answers, setAnswers] = useState<Record<string, string>>({});

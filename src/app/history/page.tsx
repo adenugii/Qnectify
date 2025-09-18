@@ -1,13 +1,29 @@
 import Navbar from "@/components/common/Navbar";
-import PerformanceOverviewSection from "@/components/history/PerformanceOverviewSection";
 import { cookies } from "next/headers";
 import { getQuizAttempts, getQuizById } from "@/services/quizservices";
+
+interface QuizAttempt {
+  id: string;
+  quiz_id: string;
+  user_id: string;
+  score: number;
+  total_questions: number;
+  submitted_at: string;
+  is_completed: boolean;
+}
+
+interface QuizMeta {
+  [quizId: string]: {
+    title?: string;
+    difficulty?: string;
+  };
+}
 
 async function QuizHistorySection() {
   const cookieStore = cookies();
   const token = (await cookieStore).get("token")?.value || "";
-  let attempts: any[] = [];
-  let quizMeta: Record<string, any> = {};
+  let attempts: QuizAttempt[] = [];
+  const quizMeta: QuizMeta = {};
   try {
     const res = await getQuizAttempts(token);
     attempts = res.attempts || [];
@@ -36,7 +52,7 @@ async function QuizHistorySection() {
           });
           // Ambil 3 attempt terbaru dari bestAttempts
           const sorted = Object.values(bestAttempts).sort((a: any, b: any) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime());
-          return sorted.slice(0, 10).map((q: any, i) => {
+          return sorted.slice(0, 10).map((q: any) => {
             const meta = quizMeta[q.quiz_id] || {};
             const percent = q.total_questions > 0 ? (q.score / q.total_questions) * 100 : 0;
             const lulus = percent >= 50;

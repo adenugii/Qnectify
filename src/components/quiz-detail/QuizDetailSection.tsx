@@ -2,6 +2,17 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+interface QuizDetail {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  time_limit?: { String: string; Valid: boolean };
+  created_by: string;
+  questions: any[];
+  created_at: string;
+}
+
 function formatDate(dateStr: string) {
   if (!dateStr) return "-";
   const date = new Date(dateStr);
@@ -20,7 +31,7 @@ function getDifficultyLabel(difficulty: string) {
   return { text: difficulty, color: "bg-gray-100 text-gray-600" };
 }
 
-export default function QuizDetailSection({ quiz }: { quiz: any }) {
+export default function QuizDetailSection({ quiz }: { quiz: QuizDetail }) {
   const router = useRouter();
   useEffect(() => {
     if (!quiz) {

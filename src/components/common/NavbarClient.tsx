@@ -25,7 +25,7 @@ export default function NavbarClient({ user }: { user: NavbarUser | null }) {
 
   const protectedLinks = ["/quiz-maker", "/history", "/study-groups"];
 
-  const handleProtectedNav = (e: any, href: string) => {
+  const handleProtectedNav = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     if (!user && protectedLinks.includes(href)) {
       e.preventDefault();
       setShowLoginPopup(true);

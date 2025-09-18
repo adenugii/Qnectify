@@ -4,9 +4,21 @@ import { getFeed, getUserById } from "@/services/userservices";
 import Image from "next/image";
 import Link from "next/link";
 
+interface FeedItem {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  done?: number;
+  author?: string;
+  liked?: boolean;
+  popular?: number;
+  created_by: string;
+}
+
 export default function FeedSection({ token }: { token: string }) {
   const [filter, setFilter] = useState<'terbaru' | 'populer' | 'kesulitan'>('terbaru');
-  const [feed, setFeed] = useState<any[]>([]);
+  const [feed, setFeed] = useState<FeedItem[]>([]);
   const [userMap, setUserMap] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +40,7 @@ export default function FeedSection({ token }: { token: string }) {
     fetchFeed();
   }, [token]);
 
-  let filteredFeed = [...feed];
+  const filteredFeed = [...feed];
   if (filter === 'populer') filteredFeed.sort((a, b) => (b.popular || 0) - (a.popular || 0));
   if (filter === 'kesulitan') filteredFeed.sort((a, b) => (a.difficulty || '').localeCompare(b.difficulty || ''));
 

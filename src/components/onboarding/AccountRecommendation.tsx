@@ -5,9 +5,16 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { followUser } from "@/services/userservices";
 
-export default function AccountRecommendation({ users, token }: { users: any[]; token: string }) {
-  const [cards, setCards] = useState(users.map((user: any) => ({ user, status: "idle" })));
-  const [followed, setFollowed] = useState<any[]>([]);
+interface AccountUser {
+  id: string;
+  username: string;
+  email: string;
+  follower_count: number;
+}
+
+export default function AccountRecommendation({ users, token }: { users: AccountUser[]; token: string }) {
+  const [cards, setCards] = useState<{ user: AccountUser; status: string }[]>(users.map((user) => ({ user, status: "idle" })));
+  const [followed, setFollowed] = useState<AccountUser[]>([]);
   const [search, setSearch] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [loadingFollow, setLoadingFollow] = useState<string | null>(null);

@@ -3,9 +3,26 @@ import { useEffect, useState } from "react";
 import { getQuizAttempts, getQuizById } from "@/services/quizservices";
 import { FaCalculator } from "react-icons/fa6";
 
+interface QuizAttempt {
+  id: string;
+  quiz_id: string;
+  user_id: string;
+  score: number;
+  total_questions: number;
+  submitted_at: string;
+  is_completed: boolean;
+}
+
+interface QuizMeta {
+  [quizId: string]: {
+    title?: string;
+    difficulty?: string;
+  };
+}
+
 export default function QuizHistory({ token }: { token?: string })  {
-  const [attempts, setAttempts] = useState<any[]>([]);
-  const [quizMeta, setQuizMeta] = useState<Record<string, any>>({});
+  const [attempts, setAttempts] = useState<QuizAttempt[]>([]);
+  const [quizMeta, setQuizMeta] = useState<QuizMeta>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
