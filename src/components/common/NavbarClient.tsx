@@ -13,7 +13,12 @@ const navLinks = [
   { name: "History Quiz", href: "/history" },
 ];
 
-export default function NavbarClient({ user }: { user: any }) {
+export interface NavbarUser {
+  avatar?: string;
+  username?: string;
+}
+
+export default function NavbarClient({ user }: { user: NavbarUser | null }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);

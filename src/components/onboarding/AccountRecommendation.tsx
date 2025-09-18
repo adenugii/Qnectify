@@ -40,6 +40,7 @@ export default function AccountRecommendation({ users, token }: { users: any[]; 
       setCards((prev) => {
         const idx = prev.findIndex((c) => c.user.id === userId);
         if (idx === -1) return prev;
+        // Ganti let newCards menjadi const newCards
         const newCards = [...prev];
         newCards[idx] = { ...newCards[idx], status: "removing" };
         return newCards;
@@ -48,7 +49,7 @@ export default function AccountRecommendation({ users, token }: { users: any[]; 
         setCards((prev) => {
           const idx = prev.findIndex((c) => c.user.id === userId);
           if (idx === -1) return prev;
-          let newCards = [...prev];
+          const newCards = [...prev];
           newCards.splice(idx, 1);
           return newCards;
         });

@@ -26,6 +26,12 @@ const slides = [
 	},
 ];
 
+interface RegisterForm {
+  email: string;
+  password: string;
+  username: string;
+}
+
 export default function RegisterAuthLayout({ onRegister }: {
   onRegister?: ({
     email,
