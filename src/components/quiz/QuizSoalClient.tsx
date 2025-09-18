@@ -29,6 +29,14 @@ interface QuizOption {
   id: string;
   content: string;
 }
+interface QuizResult {
+  attempts?: {
+    score: number;
+    total_questions: number;
+    submitted_at: string;
+  }[];
+  error?: string;
+}
 
 export default function QuizSoalClient({ quizId, soalId, token }: { quizId: string; soalId: string; token: string }) {
   const router = useRouter();
@@ -36,7 +44,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   const [loading, setLoading] = useState(true);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<QuizResult | null>(null);
   const [selected, setSelected] = useState<number>(-1);
 
   useEffect(() => {
@@ -186,7 +194,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
           levelColor={quiz.difficulty === "easy" ? "green" : quiz.difficulty === "medium" ? "yellow" : "red"}
           questions={total}
           time={Number(quiz.time_limit?.String) || 45}
-          progress={progress}
+    
           status="progress"
           question={question.question_text}
           options={question.options.map((opt) => opt.content)}

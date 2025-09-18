@@ -8,7 +8,6 @@ export interface QuizCardProps {
   levelColor: "green" | "yellow" | "red";
   questions: number;
   time: number;
-  progress: number; // 0-100
   status: "progress" | "done" | "not_started";
   question: string;
   options: string[];
@@ -30,7 +29,6 @@ export default function QuizCard({
   levelColor,
   questions,
   time,
-  progress,
   status,
   question,
   options,

@@ -68,7 +68,7 @@ export default function QuizHistory({ token }: { token?: string })  {
           <div className="text-gray-400">Loading...</div>
         ) : attempts.length === 0 ? (
           <div className="text-gray-400">Belum ada riwayat quiz.</div>
-        ) : attempts.map((a, i) => {
+        ) : attempts.map((a) => {
           const meta = quizMeta[a.quiz_id] || {};
           const percent = a.total_questions > 0 ? (a.score / a.total_questions) * 100 : 0;
           const lulus = percent >= 50;
