@@ -100,8 +100,8 @@ export default function RegisterAuthLayout({ onRegister }: {
 		try {
 			await signup({ email, username, password });
 			router.push("/rekomendasi-akun");
-		} catch (err: any) {
-			setError(err.message || "Gagal mendaftar.");
+		} catch (err) {
+			setError((err as Error).message || "Gagal mendaftar.");
 		} finally {
 			setLoading(false);
 		}

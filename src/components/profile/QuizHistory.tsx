@@ -28,10 +28,10 @@ export default function QuizHistory({ token }: { token?: string })  {
   useEffect(() => {
     async function fetchHistory() {
       setLoading(true);
-      // Gunakan token dari props jika ada, jangan ambil dari localStorage
-      let res: any = {};
+      const tokenStr = token || "";
+      let res: { attempts?: QuizAttempt[] } = {};
       try {
-        res = await getQuizAttempts(token || "");
+        res = await getQuizAttempts(tokenStr);
       } catch {
         res = { attempts: [] };
       }
@@ -48,7 +48,8 @@ export default function QuizHistory({ token }: { token?: string })  {
       // Fetch meta quiz
       const meta: Record<string, any> = {};
       await Promise.all(sorted.slice(0, 3).map(async (a: QuizAttempt) => {
-        const quiz = await getQuizById(token || "", a.quiz_id);
+        if (!a.quiz_id || typeof a.quiz_id !== 'string') return;
+        const quiz = await getQuizById(tokenStr, a.quiz_id);
         if (quiz) meta[a.quiz_id] = quiz;
       }));
       setQuizMeta(meta);

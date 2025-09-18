@@ -45,6 +45,7 @@ async function QuizHistorySection() {
         {(() => {
           // Filter hanya attempt dengan skor tertinggi untuk setiap quiz_id
           const bestAttempts: Record<string, any> = {};
+          // Ganti parameter any di forEach dengan tipe QuizAttempt
           attempts.forEach((a: QuizAttempt) => {
             if (!bestAttempts[a.quiz_id] || a.score > bestAttempts[a.quiz_id].score) {
               bestAttempts[a.quiz_id] = a;
