@@ -36,7 +36,7 @@ export default function QuizHistory({ token }: { token?: string })  {
         res = { attempts: [] };
       }
       // Filter hanya attempt dengan skor tertinggi untuk setiap quiz_id
-      const bestAttempts: Record<string, any> = {};
+      const bestAttempts: Record<string, QuizAttempt> = {};
       (res.attempts || []).forEach((a: QuizAttempt) => {
         if (!bestAttempts[a.quiz_id] || a.score > bestAttempts[a.quiz_id].score) {
           bestAttempts[a.quiz_id] = a;
