@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { signup, signin } from "@/services/authservices";
+import { signup } from "@/services/authservices";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const slides = [
 	{
@@ -25,12 +25,6 @@ const slides = [
 		logoText: "Smart Quiz",
 	},
 ];
-
-interface RegisterForm {
-  email: string;
-  password: string;
-  username: string;
-}
 
 export default function RegisterAuthLayout({ onRegister }: {
   onRegister?: ({
@@ -235,9 +229,9 @@ export default function RegisterAuthLayout({ onRegister }: {
 					</form>
 					<div className="text-xs text-gray-500 mt-6 text-center">
 						Sudah punya akun?{" "}
-						<a href="/login" className="text-[#2563eb] hover:underline">
+						<Link href="/login" className="text-[#2563eb] hover:underline">
 							Masuk di sini
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
