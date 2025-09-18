@@ -57,7 +57,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
         setAnswers((prev) => {
           if (Object.keys(prev).length === 0) {
             const initial: Record<string, string> = {};
-            data.questions.forEach((q: any) => {
+            data.questions.forEach((q: QuizQuestion) => {
               initial[q.id] = "";
             });
             // Simpan ke localStorage juga
@@ -70,7 +70,6 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
       setLoading(false);
     }
     fetchQuiz();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quizId, token]);
 
   useEffect(() => {
@@ -81,7 +80,6 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
     } else {
       setSelected(-1);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [soalId, quiz]); // Hapus answers dari dependency agar tidak error
 
   if (loading) {
@@ -90,7 +88,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   if (!quiz) {
     return <div className="text-center mt-10 text-red-500">Quiz tidak ditemukan.</div>;
   }
-  const current = quiz.questions.findIndex((q: any) => q.id === soalId);
+  const current = quiz.questions.findIndex((q) => q.id === soalId);
   const total = quiz.questions.length;
   const question = quiz.questions[current];
 
@@ -112,7 +110,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   };
   const handleSubmit = async () => {
     // Cek apakah semua soal sudah dijawab
-    const allAnswered = quiz.questions.every((q: any) => answers[q.id] && answers[q.id] !== "");
+    const allAnswered = quiz.questions.every((q) => answers[q.id] && answers[q.id] !== "");
     if (!allAnswered) {
       alert("Harap jawab semua soal sebelum mengumpulkan quiz!");
       return;
@@ -125,7 +123,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
       if (typeof window !== 'undefined') localStorage.removeItem(storageKey);
       const res = await getQuizAttempts(token, quizId);
       setResult(res);
-    } catch (e) {
+    } catch {
       setResult({ error: "Gagal submit atau mengambil hasil quiz" });
     }
   };
@@ -182,7 +180,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
           progress={progress}
           status="progress"
           question={question.question_text}
-          options={question.options.map((opt: any) => opt.content)}
+          options={question.options.map((opt) => opt.content)}
           selected={selected}
           setSelected={handleSelect}
         />
