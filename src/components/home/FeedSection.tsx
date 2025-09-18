@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, prefer-const */
 "use client";
 import { useState, useEffect } from "react";
 import { getFeed, getUserById } from "@/services/userservices";

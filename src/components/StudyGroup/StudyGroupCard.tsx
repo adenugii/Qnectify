@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import { FaCalculator, FaAtom } from "react-icons/fa";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { HiUsers } from "react-icons/hi2";
@@ -32,6 +33,7 @@ export default function StudyGroupCard({
   inviteCode,
   token,
 }: StudyGroupCardProps) {
+  const router = useRouter();
   // Pilih ikon sesuai tipe grup
   const iconMap = {
     math: <FaCalculator className="text-[#2563eb] text-lg" />,
@@ -39,7 +41,6 @@ export default function StudyGroupCard({
     english: <PiBookOpenTextFill className="text-[#2563eb] text-lg" />,
   };
 
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const handleJoin = async () => {

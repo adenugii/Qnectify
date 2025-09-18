@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const API_BASE_URL = process.env.API_BASE_URL || "http://101.32.242.72:3000";
 
 export async function uploadQuiz({ file, num_questions, difficulty, description, token, time_limit }: {

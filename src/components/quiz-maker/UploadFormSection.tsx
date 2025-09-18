@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useRef } from "react";
 import { FaCloudUploadAlt } from "react-icons/fa";

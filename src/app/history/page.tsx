@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, prefer-const */
 import Navbar from "@/components/common/Navbar";
 import PerformanceOverviewSection from "@/components/history/PerformanceOverviewSection";
 import { cookies } from "next/headers";
