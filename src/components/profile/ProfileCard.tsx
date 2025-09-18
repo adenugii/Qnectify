@@ -21,7 +21,7 @@ export default function ProfileCard({ user }: { user: any }) {
     <section className="bg-white rounded-xl shadow-sm p-6 flex items-center gap-6">
       <div>
         <img
-          src={user.image_url?.String || "/profile-demo.jpg"}
+          src={user.image_url?.String || "/profile.png"}
           alt="Profile"
           className="w-20 h-20 rounded-full object-cover border-4 border-gray-100"
         />

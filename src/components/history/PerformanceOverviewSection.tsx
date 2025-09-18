@@ -3,22 +3,22 @@ import { FaClipboardList, FaCheckCircle, FaChartLine, FaFire } from "react-icons
 const stats = [
   {
     icon: <FaClipboardList size={32} className="text-[#6366f1]" />,
-    value: 6,
+    value: 1,
     label: "Total Quizzes",
   },
   {
     icon: <FaCheckCircle size={32} className="text-[#22c55e]" />,
-    value: 5,
+    value: 1,
     label: "Passed",
   },
   {
     icon: <FaChartLine size={32} className="text-[#a78bfa]" />,
-    value: 80.5,
+    value: 100,
     label: "Average Score",
   },
   {
     icon: <FaFire size={32} className="text-[#f59e42]" />,
-    value: 3,
+    value: 1,
     label: "Current Streak",
   },
 ];

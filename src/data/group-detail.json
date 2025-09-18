@@ -9,7 +9,7 @@
     {
       "title": "Matematika Dasar - Aljabar Linear",
       "desc": "Ditambahkan oleh Andi Pratama",
-      "avatar": "/profile1.jpg",
+      "avatar": "/profile.png",
       "questions": 25,
       "time": 45,
       "done": 8,
@@ -22,7 +22,7 @@
     {
       "title": "Fisika - Mekanika Newton",
       "desc": "Ditambahkan oleh Sari Dewi",
-      "avatar": "/profile2.jpg",
+      "avatar": "/profile.png",
       "questions": 20,
       "time": 30,
       "done": 3,
@@ -35,7 +35,7 @@
     {
       "title": "Bahasa Inggris - Grammar Tenses",
       "desc": "Ditambahkan oleh Budi Santoso",
-      "avatar": "/profile3.jpg",
+      "avatar": "/profile.png",
       "questions": 30,
       "time": 60,
       "done": 12,
@@ -48,7 +48,7 @@
   ],
   "topPerformers": [
     {
-      "name": "Kamu",
+      "name": "Rafiananta",
       "avatar": "/profile-demo.jpg",
       "quizDone": 3,
       "xp": 1240,
@@ -57,7 +57,7 @@
     },
     {
       "name": "Sari Dewi",
-      "avatar": "/profile2.jpg",
+      "avatar": "/profile.png",
       "quizDone": 2,
       "xp": 980,
       "rank": 2,
@@ -66,8 +66,8 @@
   ],
   "members": [
     {
-      "name": "Kamu",
-      "avatar": "/profile-demo.jpg",
+      "name": "Rafiananta",
+      "avatar": "/profile.png",
       "role": "Admin",
       "xp": 1240,
       "quizDone": 3,
@@ -75,7 +75,7 @@
     },
     {
       "name": "Sari Dewi",
-      "avatar": "/profile2.jpg",
+      "avatar": "/profile.png",
       "role": "Member",
       "xp": 980,
       "quizDone": 2,
@@ -83,7 +83,7 @@
     },
     {
       "name": "Budi Santoso",
-      "avatar": "/profile3.jpg",
+      "avatar": "/profile.png",
       "role": "Member",
       "xp": 800,
       "quizDone": 2,
@@ -91,7 +91,7 @@
     },
     {
       "name": "Andi Pratama",
-      "avatar": "/profile-andi.jpg",
+      "avatar": "/profile.png",
       "role": "Member",
       "xp": 700,
       "quizDone": 1,
@@ -100,8 +100,8 @@
   ],
   "leaderboard": [
     {
-      "name": "Kamu",
-      "avatar": "/profile-demo.jpg",
+      "name": "Rafiananta",
+      "avatar": "/profile.png",
       "xp": 1240,
       "quizDone": 3,
       "rank": 1,
@@ -109,7 +109,7 @@
     },
     {
       "name": "Sari Dewi",
-      "avatar": "/profile2.jpg",
+      "avatar": "/profile.png",
       "xp": 980,
       "quizDone": 2,
       "rank": 2,
@@ -117,7 +117,7 @@
     },
     {
       "name": "Budi Santoso",
-      "avatar": "/profile3.jpg",
+      "avatar": "/profile.png",
       "xp": 800,
       "quizDone": 2,
       "rank": 3,
@@ -125,7 +125,7 @@
     },
     {
       "name": "Andi Pratama",
-      "avatar": "/profile-andi.jpg",
+      "avatar": "/profile.png",
       "xp": 700,
       "quizDone": 1,
       "rank": 4,
