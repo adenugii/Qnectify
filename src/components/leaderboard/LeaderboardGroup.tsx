@@ -10,20 +10,14 @@ interface Group {
   xp: number;
   trend: number;
   isYou?: boolean;
+  member_count?: number;
+  total_score?: number;
 }
 
 interface LeaderboardGroupProps {
   groups: Group[];
   page: number;
   setPage: (page: number) => void;
-}
-
-// Ganti semua any dengan tipe spesifik
-interface GroupLeaderboardType {
-  id: string;
-  name: string;
-  xp: number;
-  members: number;
 }
 
 export default function LeaderboardGroup({ groups, page, setPage }: LeaderboardGroupProps) {
@@ -39,9 +33,9 @@ export default function LeaderboardGroup({ groups, page, setPage }: LeaderboardG
         Global Leaderboard <span className="font-normal text-gray-400 text-sm">(Top 50 Group)</span>
       </div>
       <div className="flex flex-col gap-2">
-        {groups.map((group: any, idx: number) => (
+        {groups.map((group, idx) => (
           <div
-            key={(group.group_id || group.name) + idx}
+            key={group.name + idx}
             className={`flex items-center gap-4 px-4 py-3 rounded-lg border transition ${
               idx === 0
                 ? "bg-yellow-50 border-yellow-200"

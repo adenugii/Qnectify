@@ -43,8 +43,8 @@ export default function RegisterPage() {
       setTimeout(() => {
         router.push("/rekomendasi-akun");
       }, 1200);
-    } catch (err: any) {
-      setError(err.message || "Gagal mendaftar");
+    } catch (err) {
+      setError((err as Error).message || "Gagal mendaftar");
     } finally {
       setLoading(false);
     }

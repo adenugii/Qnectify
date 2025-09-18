@@ -34,10 +34,10 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   const router = useRouter();
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<number>(-1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [selected, setSelected] = useState<number>(-1);
 
   useEffect(() => {
     // Ambil answers dari localStorage jika ada
@@ -76,7 +76,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
   useEffect(() => {
     // Set selected sesuai jawaban yang sudah ada di answers saat navigasi soal
     if (quiz && question && answers) {
-      const idx = question.options.findIndex((opt: any) => opt.id === answers[question.id]);
+      const idx = question.options.findIndex((opt) => opt.id === answers[question.id]);
       setSelected(idx);         
     } else {
       setSelected(-1);
@@ -183,7 +183,7 @@ export default function QuizSoalClient({ quizId, soalId, token }: { quizId: stri
           status="progress"
           question={question.question_text}
           options={question.options.map((opt: any) => opt.content)}
-          selected={question.id in answers ? question.options.findIndex((opt: any) => opt.id === answers[question.id]) : -1}
+          selected={selected}
           setSelected={handleSelect}
         />
         <QuizNavigation
